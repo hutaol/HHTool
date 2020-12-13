@@ -21,10 +21,10 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/1325049637@qq.com/HHTool'
+  s.homepage         = 'https://github.com/hutaol/HHTool'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { '1325049637@qq.com' => '1325049637@qq.com' }
+  s.author           = { 'Henry' => '1325049637@qq.com' }
   s.source           = { :git => 'https://github.com/1325049637@qq.com/HHTool.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
@@ -39,4 +39,14 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  
+  s.resources   = 'HHTool/Assets/*.{png,xib,nib,bundle}'
+
+  s.dependency 'Toast', '~> 4.0.0'
+  s.dependency 'SPAlertController', '~> 4.0.0'
+  s.dependency 'MBProgressHUD', '~> 1.2.0'
+  s.dependency 'HXPhotoPicker', '~> 3.1.6'
+  s.dependency 'HXPhotoPicker/SDWebImage', '~> 3.1.6'
+  s.dependency 'YBPopupMenu', '~> 1.1.6'
+  
 end

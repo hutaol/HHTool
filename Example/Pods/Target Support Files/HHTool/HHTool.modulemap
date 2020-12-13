@@ -1,0 +1,6 @@
+framework module HHTool {
+  umbrella header "HHTool-umbrella.h"
+
+  export *
+  module * { export * }
+}

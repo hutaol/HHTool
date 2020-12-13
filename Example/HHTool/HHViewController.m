@@ -7,6 +7,7 @@
 //
 
 #import "HHViewController.h"
+#import <HHTool/HHTool.h>
 
 @interface HHViewController ()
 
@@ -18,6 +19,17 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"dd" style:UIBarButtonItemStylePlain target:self action:@selector(ddd:)];
+
+}
+
+- (void)ddd:(UIBarButtonItem *)sender {
+    UIView *view = [sender valueForKey:@"view"];
+    [HHPopupTool showInView:view titles:@[@"11"] icons:nil menuWidth:120 action:^(NSInteger index, YBPopupMenu * _Nonnull popupMenu) {
+        NSLog(@"%ld", index);
+
+    }];
 }
 
 - (void)didReceiveMemoryWarning
