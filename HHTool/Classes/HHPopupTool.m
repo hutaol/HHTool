@@ -6,6 +6,7 @@
 //
 
 #import "HHPopupTool.h"
+#import "NSString+HHSize.h"
 
 @interface HHPopupTool () <YBPopupMenuDelegate>
 
@@ -30,23 +31,33 @@ static dispatch_once_t onceToken = 0;
     _sharedInstance = nil;
 }
 
-+ (void)showInView:(UIView *)view titles:(NSArray *)titles icons:(NSArray *)icons menuWidth:(CGFloat)menuWidth action:(HHPopupToolDidSelected)action {
-    [[HHPopupTool sharedInstance] show:view point:CGPointZero titles:titles icons:icons menuWidth:menuWidth action:action];
++ (YBPopupMenu *)showInView:(UIView *)view titles:(NSArray *)titles action:(HHPopupToolDidSelected)action {
+    CGFloat maxWidth = [self size:nil titles:titles];
+    return [[HHPopupTool sharedInstance] show:view point:CGPointZero titles:titles icons:nil menuWidth:maxWidth action:action];
 }
 
-+ (void)showInPoint:(CGPoint)point titles:(NSArray *)titles icons:(nullable NSArray *)icons menuWidth:(CGFloat)menuWidth action:(nullable HHPopupToolDidSelected)action {
-    [[HHPopupTool sharedInstance] show:nil point:point titles:titles icons:icons menuWidth:menuWidth action:action];
++ (YBPopupMenu *)showInView:(UIView *)view titles:(NSArray *)titles icons:(NSArray *)icons action:(HHPopupToolDidSelected)action {
+    CGFloat maxWidth = [self size:icons titles:titles];
+    return [[HHPopupTool sharedInstance] show:view point:CGPointZero titles:titles icons:icons menuWidth:maxWidth action:action];
 }
 
-- (void)show:(UIView *)view point:(CGPoint)point titles:(NSArray *)titles icons:(NSArray *)icons menuWidth:(CGFloat)menuWidth action:(HHPopupToolDidSelected)action {
++ (YBPopupMenu *)showInView:(UIView *)view titles:(NSArray *)titles icons:(NSArray *)icons menuWidth:(CGFloat)menuWidth action:(HHPopupToolDidSelected)action {
+    return[[HHPopupTool sharedInstance] show:view point:CGPointZero titles:titles icons:icons menuWidth:menuWidth action:action];
+}
+
++ (YBPopupMenu *)showInPoint:(CGPoint)point titles:(NSArray *)titles icons:(NSArray *)icons menuWidth:(CGFloat)menuWidth action:(HHPopupToolDidSelected)action {
+    return [[HHPopupTool sharedInstance] show:nil point:point titles:titles icons:icons menuWidth:menuWidth action:action];
+}
+
+- (YBPopupMenu *)show:(UIView *)view point:(CGPoint)point titles:(NSArray *)titles icons:(NSArray *)icons menuWidth:(CGFloat)menuWidth action:(HHPopupToolDidSelected)action {
     self.black = action;
     
     if (view) {
-        [YBPopupMenu showRelyOnView:view titles:titles icons:icons menuWidth:menuWidth otherSettings:^(YBPopupMenu *popupMenu) {
+        return [YBPopupMenu showRelyOnView:view titles:titles icons:icons menuWidth:menuWidth otherSettings:^(YBPopupMenu *popupMenu) {
             popupMenu.delegate = self;
         }];
     } else {
-        [YBPopupMenu showAtPoint:point titles:titles icons:icons menuWidth:menuWidth otherSettings:^(YBPopupMenu *popupMenu) {
+        return [YBPopupMenu showAtPoint:point titles:titles icons:icons menuWidth:menuWidth otherSettings:^(YBPopupMenu *popupMenu) {
             popupMenu.delegate = self;
         }];
     }
@@ -58,6 +69,30 @@ static dispatch_once_t onceToken = 0;
         self.black(index, ybPopupMenu);
     }
     [HHPopupTool attempDealloc];
+}
+
+// TODO 默认字体15，有图片宽度36 最大60
++ (CGFloat)size:(NSArray *)icons titles:(NSArray *)titles {
+    CGFloat maxWidth = 0;
+    for (int i = 0; i < titles.count; i ++) {
+        NSString *title = titles[i];
+        CGSize size = [title hh_textSizeInFont:[UIFont systemFontOfSize:15]];
+        
+        // img
+        CGFloat widthImg = 0;
+        if (icons.count > i) {
+            UIImage *img = icons[i];
+            if ([img isKindOfClass:[UIImage class]]) {
+                widthImg = MIN(img.size.width*2, 60);
+            } else {
+                widthImg = 36;
+            }
+        }
+        maxWidth = MAX(maxWidth, size.width+widthImg);
+    }
+    
+    maxWidth += 32;
+    return maxWidth;
 }
 
 @end

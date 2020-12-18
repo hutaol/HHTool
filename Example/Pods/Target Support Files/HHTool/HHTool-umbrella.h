@@ -22,6 +22,7 @@
 #import "HHUIImagePicker.h"
 #import "MBProgressHUD+HHTool.h"
 #import "NSBundle+HHTool.h"
+#import "NSString+HHSize.h"
 #import "UIFont+HHSize.h"
 #import "UIView+HHFrame.h"
 #import "UIWindow+HHHelper.h"

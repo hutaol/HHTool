@@ -26,9 +26,11 @@
 
 - (void)ddd:(UIBarButtonItem *)sender {
     UIView *view = [sender valueForKey:@"view"];
-    [HHPopupTool showInView:view titles:@[@"11"] icons:nil menuWidth:120 action:^(NSInteger index, YBPopupMenu * _Nonnull popupMenu) {
-        NSLog(@"%ld", index);
-
+    NSArray *titles = @[@"创建群聊", @"少一事", @"搜索的地方"];
+    NSArray *images = @[@"ic_pop_scan_green", @"ic_pop_scan_green"];
+    
+    [HHPopupTool showInView:view titles:titles icons:images action:^(NSInteger index, YBPopupMenu * _Nonnull popupMenu) {
+        
     }];
 }
 

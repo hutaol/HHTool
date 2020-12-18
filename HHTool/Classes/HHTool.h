@@ -22,5 +22,6 @@
 #import "MBProgressHUD+HHTool.h"
 #import "UIWindow+HHHelper.h"
 #import "UIFont+HHSize.h"
+#import "NSString+HHSize.h"
 
 #endif /* HHTool_h */
