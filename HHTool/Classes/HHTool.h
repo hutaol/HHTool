@@ -24,5 +24,6 @@
 #import "UIWindow+HHHelper.h"
 #import "UIFont+HHSize.h"
 #import "NSString+HHSize.h"
+#import "UIScrollView+HHLoading.h"
 
 #endif /* HHTool_h */

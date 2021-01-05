@@ -48,5 +48,7 @@ TODO: Add long description of the pod here.
   s.dependency 'HXPhotoPicker', '~> 3.1.7'
   s.dependency 'HXPhotoPicker/SDWebImage', '~> 3.1.7'
   s.dependency 'YBPopupMenu', '~> 1.1.6'
+  s.dependency 'DZNEmptyDataSet', '~> 1.8.1'
+
   
 end

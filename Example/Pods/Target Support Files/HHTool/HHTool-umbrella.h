@@ -25,6 +25,7 @@
 #import "NSBundle+HHTool.h"
 #import "NSString+HHSize.h"
 #import "UIFont+HHSize.h"
+#import "UIScrollView+HHLoading.h"
 #import "UIView+HHFrame.h"
 #import "UIWindow+HHHelper.h"
 

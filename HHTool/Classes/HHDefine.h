@@ -35,7 +35,7 @@ static inline UIImage *GetImageWithName(NSString *name) {
 }
 
 static inline HHLanguageType GetLanguageType() {
-    return [NSBundle getLanguageType];
+    return (HHLanguageType)[NSBundle getLanguageType];
 }
 
 #endif /* HHDefine_h */

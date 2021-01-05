@@ -7,14 +7,14 @@
 //
 
 #import "HHAppDelegate.h"
-#import "HHViewController.h"
+#import "HHMainViewController.h"
 
 @implementation HHAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
-    HHViewController *vc = [[HHViewController alloc] init];
+    HHMainViewController *vc = [[HHMainViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
