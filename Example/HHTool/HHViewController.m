@@ -7,6 +7,7 @@
 //
 
 #import "HHViewController.h"
+#import "HHCountryTableViewController.h"
 #import <HHTool/HHTool.h>
 
 @interface HHViewController ()
@@ -29,9 +30,16 @@
     NSArray *titles = @[@"创建群聊", @"少一事", @"搜索的地方"];
     NSArray *images = @[@"ic_pop_scan_green", @"ic_pop_scan_green"];
     
-    [HHPopupTool showInView:view titles:titles icons:images action:^(NSInteger index, YBPopupMenu * _Nonnull popupMenu) {
-        
-    }];
+//    [HHPopupTool showInView:view titles:titles icons:images action:^(NSInteger index, YBPopupMenu * _Nonnull popupMenu) {
+//
+//    }];
+    
+//    [[HHCountryTool sharedInstance] getCountryCompelete:^(NSArray * _Nonnull arrayCode) {
+//
+//    }];
+    
+    HHCountryTableViewController *vc = [[HHCountryTableViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

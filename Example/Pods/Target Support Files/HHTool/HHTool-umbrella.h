@@ -13,6 +13,7 @@
 #import "HHAlertCustomTool.h"
 #import "HHAlertTool.h"
 #import "HHConfiguration.h"
+#import "HHCountryTool.h"
 #import "HHDefine.h"
 #import "HHPathTool.h"
 #import "HHPhotoTool.h"

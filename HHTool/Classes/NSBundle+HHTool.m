@@ -34,6 +34,9 @@
     return image;
 }
 
++ (NSString *)getToolFilePath:(NSString *)name type:(NSString *)type {
+    return [[NSBundle hhResourceBundle] pathForResource:name ofType:type];
+}
 
 static NSBundle *bundle = nil;
 + (void)hhResetLanguage {
@@ -89,6 +92,29 @@ static NSBundle *bundle = nil;
             break;
     }
     return language;
+}
+
++ (NSInteger)getLanguageType {
+    HHLanguageType type = [[[NSUserDefaults standardUserDefaults] valueForKey:HHLanguageTypeKey] integerValue];
+    if (type != HHLanguageSystem) {
+        return type;
+    }
+    
+    NSString *language = [NSLocale preferredLanguages].firstObject;
+    if ([language hasPrefix:@"en"]) {
+        return HHLanguageEnglish;
+    } else if ([language hasPrefix:@"zh"]) {
+        if ([language rangeOfString:@"Hans"].location != NSNotFound) {
+            return HHLanguageChineseSimplified;
+        } else { // zh-Hant\zh-HK\zh-TW
+            return HHLanguageChineseTraditional;
+        }
+    } else if ([language hasPrefix:@"ja"]) {
+        return HHLanguageJapanese;
+    } else {
+        return HHLanguageEnglish;
+    }
+    return HHLanguageEnglish;
 }
 
 @end

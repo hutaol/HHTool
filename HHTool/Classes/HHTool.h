@@ -15,6 +15,7 @@
 #import "HHPhotoTool.h"
 #import "HHUIImagePicker.h"
 #import "HHPopupTool.h"
+#import "HHCountryTool.h"
 
 #import "HHConfiguration.h"
 

@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)languageType:(HHLanguageType)type;
 
++ (HHLanguageType)getLanaguage;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -15,4 +15,9 @@
     [NSBundle hhResetLanguage];
 }
 
++ (HHLanguageType)getLanaguage {
+    HHLanguageType type = [[[NSUserDefaults standardUserDefaults] valueForKey:HHLanguageTypeKey] integerValue];
+    return type;
+}
+
 @end

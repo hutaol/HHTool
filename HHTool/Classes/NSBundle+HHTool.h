@@ -15,11 +15,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIImage *)getImageForHHTool:(NSString *)name;
 
++ (NSString *)getToolFilePath:(NSString *)name type:(NSString *)type;
+
 + (void)hhResetLanguage;
 
 + (NSString *)hhLocalizedStringForKey:(NSString *)key;
 
 + (NSString *)hhLocalizedStringForKey:(NSString *)key value:(nullable NSString *)value;
+
++ (NSString *)getLanguage;
+
++ (NSInteger)getLanguageType;
 
 @end
 
