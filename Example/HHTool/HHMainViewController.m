@@ -9,7 +9,7 @@
 #import "HHMainViewController.h"
 #import "HHCountryTableViewController.h"
 #import "HHEmptyDataSetTableViewController.h"
-
+#import "HHPhotoViewController.h"
 
 @interface HHMainViewController ()
 
@@ -21,12 +21,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.title = @"例子";
     
-    self.dataArray = @[@"国家列表", @"EmptyDataSet"].mutableCopy;
+    self.dataArray = @[@"国家列表", @"EmptyDataSet", @"Photo"].mutableCopy;
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    
 }
 
 #pragma mark - Table view data source
@@ -59,6 +60,12 @@
         case 1:
         {
             HHEmptyDataSetTableViewController *vc = [[HHEmptyDataSetTableViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case 2:
+        {
+            HHPhotoViewController *vc = [[HHPhotoViewController alloc] init];
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;

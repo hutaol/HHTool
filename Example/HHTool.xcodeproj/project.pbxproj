@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		354FBD8625A43C6B00736FEA /* HHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 354FBD8525A43C6B00736FEA /* HHMainViewController.m */; };
 		354FBD9C25A444D500736FEA /* HHEmptyDataSetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 354FBD9B25A444D500736FEA /* HHEmptyDataSetTableViewController.m */; };
+		357A67DD25B440B4007D43FF /* HHPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A67DC25B440B4007D43FF /* HHPhotoViewController.m */; };
 		359C0ED225A0D5980088844B /* HHCountryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359C0ED125A0D5980088844B /* HHCountryTableViewController.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -45,6 +46,8 @@
 		354FBD8525A43C6B00736FEA /* HHMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHMainViewController.m; sourceTree = "<group>"; };
 		354FBD9A25A444D500736FEA /* HHEmptyDataSetTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHEmptyDataSetTableViewController.h; sourceTree = "<group>"; };
 		354FBD9B25A444D500736FEA /* HHEmptyDataSetTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHEmptyDataSetTableViewController.m; sourceTree = "<group>"; };
+		357A67DB25B440B4007D43FF /* HHPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHPhotoViewController.h; sourceTree = "<group>"; };
+		357A67DC25B440B4007D43FF /* HHPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHPhotoViewController.m; sourceTree = "<group>"; };
 		359C0ED025A0D5980088844B /* HHCountryTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHCountryTableViewController.h; sourceTree = "<group>"; };
 		359C0ED125A0D5980088844B /* HHCountryTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHCountryTableViewController.m; sourceTree = "<group>"; };
 		495F86B476A4396FA3616E84 /* Pods_HHTool_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HHTool_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +150,8 @@
 				354FBD9B25A444D500736FEA /* HHEmptyDataSetTableViewController.m */,
 				359C0ED025A0D5980088844B /* HHCountryTableViewController.h */,
 				359C0ED125A0D5980088844B /* HHCountryTableViewController.m */,
+				357A67DB25B440B4007D43FF /* HHPhotoViewController.h */,
+				357A67DC25B440B4007D43FF /* HHPhotoViewController.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -410,6 +415,7 @@
 				354FBD9C25A444D500736FEA /* HHEmptyDataSetTableViewController.m in Sources */,
 				359C0ED225A0D5980088844B /* HHCountryTableViewController.m in Sources */,
 				354FBD8625A43C6B00736FEA /* HHMainViewController.m in Sources */,
+				357A67DD25B440B4007D43FF /* HHPhotoViewController.m in Sources */,
 				6003F59E195388D20070C39A /* HHAppDelegate.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);

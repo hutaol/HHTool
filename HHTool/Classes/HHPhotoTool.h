@@ -10,6 +10,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSUInteger, HHPhotoModelMediaType) {
+    HHPhotoModelMediaTypePhoto          = 0,    //!< 照片
+    HHPhotoModelMediaTypeLivePhoto      = 1,    //!< LivePhoto
+    HHPhotoModelMediaTypePhotoGif       = 2,    //!< gif图
+    HHPhotoModelMediaTypeVideo          = 3,    //!< 视频
+    HHPhotoModelMediaTypeAudio          = 4,    //!< 预留
+    HHPhotoModelMediaTypeCameraPhoto    = 5,    //!< 通过相机拍的临时照片、本地/网络图片
+    HHPhotoModelMediaTypeCameraVideo    = 6,    //!< 通过相机录制的视频、本地视频
+    HHPhotoModelMediaTypeCamera         = 7     //!< 跳转相机
+};
+
 typedef void (^HHPhotoToolCompletion)(HHPhotoModel *model);
 typedef void (^HHPhotoToolMultipleCompletion)(NSArray <HHPhotoModel *> *images);
 
@@ -60,9 +71,11 @@ typedef void (^HHPhotoToolMultipleCompletion)(NSArray <HHPhotoModel *> *images);
 @property (nonatomic, strong) UIImage * _Nullable image;
 @property (nonatomic, strong) NSURL * _Nullable videoURL;
 
-@property (nonatomic, assign) BOOL isVideo;
+@property (nonatomic, strong) NSData * _Nullable data;
 
-+ (instancetype)modelWithImage:(nullable UIImage *)image video:(nullable NSURL *)video isVideo:(BOOL)isVideo;
+@property (nonatomic, assign) HHPhotoModelMediaType type;
+
++ (instancetype)modelWithImage:(nullable UIImage *)image video:(nullable NSURL *)video data:(nullable NSData *)data type:(HHPhotoModelMediaType)type;
 
 @end
 
