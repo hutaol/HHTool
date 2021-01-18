@@ -14,6 +14,8 @@
 
 @property (nonatomic, strong) UIImageView *imageView;
 
+@property (nonatomic, copy) NSString *imagePath;
+
 @end
 
 @implementation HHPhotoViewController
@@ -39,8 +41,17 @@
 - (void)onClick {
     [HHPhotoTool imagePickerSingleWithController:self seletedVideo:YES edit:YES completion:^(HHPhotoModel * _Nonnull model) {
         if (model.type == HHPhotoModelMediaTypePhotoGif) {
+            // 保存路径
+            NSInteger timeStamp = [[NSDate new] timeIntervalSince1970];
+            NSString *tmpPath = NSTemporaryDirectory();
+            NSString *imagePath = [NSString stringWithFormat:@"%@/%ld.gif", tmpPath, timeStamp];
+            [model.data writeToFile:imagePath atomically:YES];
+            
+            self.imagePath = imagePath;
+            
             UIImage *gifImage = [UIImage sd_imageWithGIFData:model.data];
             self.imageView.image = gifImage;
+            
         } else if (model.type == HHPhotoModelMediaTypePhoto) {
             self.imageView.image = model.image;
         }
@@ -52,7 +63,7 @@
     if (!self.imageView.image) {
         return;
     }
-    [HHPhotoTool showImageWithController:self source:@[self.imageView.image] previews:@[self.imageView] index:0];
+    [HHPhotoTool showImageWithController:self source:@[self.imagePath?:self.imageView.image] previews:@[self.imageView] index:0];
 }
 
 

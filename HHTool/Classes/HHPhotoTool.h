@@ -63,6 +63,14 @@ typedef void (^HHPhotoToolMultipleCompletion)(NSArray <HHPhotoModel *> *images);
 /// @param completion 回调
 + (void)editImageWithController:(UIViewController *)vc source:(id)source isVideo:(BOOL)isVideo completion:(HHPhotoToolCompletion)completion;
 
+
+/// 保存图片到相册 可保存gif路径图片
++ (BOOL)saveToAlbum:(id)image;
++ (BOOL)saveToAlbumAtPath:(NSString *)path;
++ (BOOL)saveToAlbumAtFileURL:(NSURL *)fileURL;
++ (BOOL)saveToAlbumAtImage:(UIImage *)image;
++ (BOOL)saveToAlbumAtVideoURL:(NSURL *)videoURL;
+
 @end
 
 

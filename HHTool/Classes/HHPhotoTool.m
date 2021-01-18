@@ -358,24 +358,16 @@
             if (index == 0) {
                 // 保存
                 if (photoModel.subType == HXPhotoModelMediaSubTypePhoto) {
-                    // 图片
-                    [HXPhotoTools savePhotoToCustomAlbumWithName:nil photo:photoModel.previewPhoto location:nil complete:^(HXPhotoModel * _Nullable model, BOOL success) {
-                        if (success) {
-                            [HHToastTool showAtCenter:GetLocalLanguageTextValue(@"SaveSuccess")];
-                        } else {
-                            [HHToastTool showAtCenter:GetLocalLanguageTextValue(@"SaveFailed")];
-                        }
-                    }];
+                    // gif
+                    if (photoModel.cameraPhotoType == HXPhotoModelMediaTypeCameraPhotoTypeLocalGif && photoModel.imageURL) {
+                        [HHPhotoTool saveToAlbum:photoModel.imageURL];
+                    } else {
+                        [HHPhotoTool saveToAlbum:photoModel.previewPhoto];
+                    }
 
                 } else {
                     // 视频
-                    [HXPhotoTools saveVideoToCustomAlbumWithName:nil videoURL:photoModel.videoURL location:nil complete:^(HXPhotoModel * _Nullable model, BOOL success) {
-                        if (success) {
-                            [HHToastTool showAtCenter:GetLocalLanguageTextValue(@"SaveSuccess")];
-                        } else {
-                            [HHToastTool showAtCenter:GetLocalLanguageTextValue(@"SaveFailed")];
-                        }
-                    }];
+                    [HHPhotoTool saveToAlbumAtVideoURL:photoModel.videoURL];
                 }
                 
             }
@@ -453,6 +445,74 @@
         // 取消
     }];
 
+}
+
++ (BOOL)saveToAlbum:(id)image {
+    if (!image) {
+        return NO;
+    }
+    if ([image isKindOfClass:[UIImage class]]) {
+        [self saveToAlbumAtImage:image];
+        return YES;
+    } else if ([image isKindOfClass:[NSURL class]]) {
+        return [self saveToAlbumAtFileURL:image];
+    } else if ([image isKindOfClass:[NSString class]]) {
+        return [self saveToAlbumAtPath:image];
+    }
+    return NO;
+}
+
++ (BOOL)saveToAlbumAtPath:(NSString *)path {
+    if (!path) {
+        return NO;
+    }
+    return [self saveToAlbumAtFileURL:[NSURL fileURLWithPath:path]];
+}
+
++ (BOOL)saveToAlbumAtFileURL:(NSURL *)fileURL {
+    if (!fileURL) {
+        return NO;
+    }
+    __block NSString *createdAssetID = nil; // 唯一标识，可以用于图片资源获取
+    NSError *error = nil;
+    [[PHPhotoLibrary sharedPhotoLibrary] performChangesAndWait:^{
+        createdAssetID = [PHAssetChangeRequest creationRequestForAssetFromImageAtFileURL:fileURL].placeholderForCreatedAsset.localIdentifier;
+    } error:&error];
+    BOOL success = createdAssetID && !error;
+    if (success) {
+        [HHToastTool showAtCenter:GetLocalLanguageTextValue(@"SaveSuccess")];
+    } else {
+        [HHToastTool showAtCenter:GetLocalLanguageTextValue(@"SaveFailed")];
+    }
+    return success;
+}
+
++ (BOOL)saveToAlbumAtImage:(UIImage *)image {
+    if (!image) {
+        return NO;
+    }
+    [HXPhotoTools savePhotoToCustomAlbumWithName:nil photo:image location:nil complete:^(HXPhotoModel * _Nullable model, BOOL success) {
+        if (success) {
+            [HHToastTool showAtCenter:GetLocalLanguageTextValue(@"SaveSuccess")];
+        } else {
+            [HHToastTool showAtCenter:GetLocalLanguageTextValue(@"SaveFailed")];
+        }
+    }];
+    return YES;
+}
+
++ (BOOL)saveToAlbumAtVideoURL:(NSURL *)videoURL {
+    if (!videoURL) {
+        return NO;
+    }
+    [HXPhotoTools saveVideoToCustomAlbumWithName:nil videoURL:videoURL location:nil complete:^(HXPhotoModel * _Nullable model, BOOL success) {
+        if (success) {
+            [HHToastTool showAtCenter:GetLocalLanguageTextValue(@"SaveSuccess")];
+        } else {
+            [HHToastTool showAtCenter:GetLocalLanguageTextValue(@"SaveFailed")];
+        }
+    }];
+    return YES;
 }
 
 @end
