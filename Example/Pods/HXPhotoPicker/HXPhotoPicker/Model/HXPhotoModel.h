@@ -2,8 +2,8 @@
 //  HXPhotoModel.h
 //  HXPhotoPickerExample
 //
-//  Created by 洪欣 on 17/2/8.
-//  Copyright © 2017年 洪欣. All rights reserved.
+//  Created by Silence on 17/2/8.
+//  Copyright © 2017年 Silence. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -250,6 +250,12 @@
                                        progressHandler:(HXModelProgressHandler _Nullable)progressHandler
                                                success:(HXModelImageDataSuccessBlock _Nullable)success
                                                 failed:(HXModelFailedBlock _Nullable)failed;
+
+- (PHImageRequestID)requestImageDataWithLoadOriginalImage:(BOOL)originalImage
+                                       startRequestICloud:(HXModelStartRequestICloud)startRequestICloud
+                                          progressHandler:(HXModelProgressHandler)progressHandler
+                                                  success:(HXModelImageDataSuccessBlock)success
+                                                   failed:(HXModelFailedBlock)failed;
 
 /// 请求获取AVAsset
 - (PHImageRequestID)requestAVAssetStartRequestICloud:(HXModelStartRequestICloud _Nullable)startRequestICloud

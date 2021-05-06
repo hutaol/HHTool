@@ -2,8 +2,8 @@
 //  HXPhotoPreviewViewController.m
 //  HXPhotoPickerExample
 //
-//  Created by 洪欣 on 2017/10/14.
-//  Copyright © 2017年 洪欣. All rights reserved.
+//  Created by Silence on 2017/10/14.
+//  Copyright © 2017年 Silence. All rights reserved.
 //
 
 #import "HXPhotoPreviewViewController.h"
@@ -193,6 +193,9 @@ HX_PhotoEditViewControllerDelegate
             [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
         }
     }
+    if (self.manager.viewWillAppear) {
+        self.manager.viewWillAppear(self);
+    }
 }
 #pragma clang diagnostic pop
 - (void)viewDidAppear:(BOOL)animated {
@@ -202,7 +205,11 @@ HX_PhotoEditViewControllerDelegate
     HXPhotoPreviewViewCell *cell = (HXPhotoPreviewViewCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:self.currentModelIndex inSection:0]];
     if (!cell) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            HXPhotoPreviewViewCell *tempCell = (HXPhotoPreviewViewCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:self.currentModelIndex inSection:0]];
+            NSIndexPath *indexPath = [NSIndexPath indexPathForItem:self.currentModelIndex inSection:0];
+            if ([HXPhotoTools isRTLLanguage]) {
+                indexPath = [NSIndexPath indexPathForItem:self.modelArray.count - 1 - self.currentModelIndex inSection:0];
+            }
+            HXPhotoPreviewViewCell *tempCell = (HXPhotoPreviewViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
             self.tempCell = tempCell;
             [tempCell requestHDImage];
         });
@@ -228,6 +235,9 @@ HX_PhotoEditViewControllerDelegate
         }
         self.isAddInteractiveTransition = YES;
     }
+    if (self.manager.viewDidAppear) {
+        self.manager.viewDidAppear(self);
+    }
 }
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
@@ -244,6 +254,15 @@ HX_PhotoEditViewControllerDelegate
     cell.stopCancel = self.stopCancel;
     [cell cancelRequest];
     self.stopCancel = NO;
+    if (self.manager.viewWillDisappear) {
+        self.manager.viewWillDisappear(self);
+    }
+}
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    if (self.manager.viewDidDisappear) {
+        self.manager.viewDidDisappear(self);
+    }
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -800,7 +819,11 @@ HX_PhotoEditViewControllerDelegate
     return [self.modelArray count];
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    HXPhotoModel *model = self.modelArray[indexPath.item];
+    NSInteger index = indexPath.item;
+    if ([HXPhotoTools isRTLLanguage]) {
+        index = self.modelArray.count - 1 - indexPath.item;
+    }
+    HXPhotoModel *model = self.modelArray[index];
     HXPhotoPreviewViewCell *cell;
     HXWeakSelf
     if (model.subType == HXPhotoModelMediaSubTypePhoto) {
@@ -1237,7 +1260,7 @@ HX_PhotoEditViewControllerDelegate
     }
     if (self.manager.configuration.singleSelected) {
         if (model.subType == HXPhotoModelMediaSubTypeVideo) {
-            if (model.videoDuration >= self.manager.configuration.videoMaximumSelectDuration + 1) {
+            if (round(model.videoDuration) >= self.manager.configuration.videoMaximumSelectDuration + 1) {
                 if (self.manager.configuration.selectVideoBeyondTheLimitTimeAutoEdit &&
                     self.manager.configuration.videoCanEdit) {
                     self.singleSelectedJumpEdit = YES;
@@ -1246,7 +1269,7 @@ HX_PhotoEditViewControllerDelegate
                     [self.view hx_showImageHUDText:[NSString stringWithFormat:[NSBundle hx_localizedStringForKey:@"视频大于%ld秒，无法选择"], self.manager.configuration.videoMaximumSelectDuration]];
                 }
                 return;
-            }else if (model.videoDuration < self.manager.configuration.videoMinimumSelectDuration) {
+            }else if (round(model.videoDuration) < self.manager.configuration.videoMinimumSelectDuration) {
                 [self.view hx_showImageHUDText:[NSString stringWithFormat:[NSBundle hx_localizedStringForKey:@"视频少于%ld秒，无法选择"], self.manager.configuration.videoMinimumSelectDuration]];
                 return;
             }

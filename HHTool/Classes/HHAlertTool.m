@@ -75,6 +75,15 @@
         
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleActionSheet];
     
+    for (int i = 0; i < buttonTitles.count; i++) {
+        UIAlertAction *action = [UIAlertAction actionWithTitle:[buttonTitles objectAtIndex:i] style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            if (actionsBlock) {
+                actionsBlock(i, action.title);
+            }
+        }];
+        [alertController addAction:action];
+    }
+    
     if (cancelTitle) {
         UIAlertAction *action = [UIAlertAction actionWithTitle:cancelTitle style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
             if (actionsBlock) {
@@ -85,18 +94,9 @@
     }
     
     if (destructiveTitle) {
-        UIAlertAction *action = [UIAlertAction actionWithTitle:cancelTitle style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+        UIAlertAction *action = [UIAlertAction actionWithTitle:destructiveTitle style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
             if (actionsBlock) {
                 actionsBlock(-2, action.title);
-            }
-        }];
-        [alertController addAction:action];
-    }
-    
-    for (int i = 0; i < buttonTitles.count; i++) {
-        UIAlertAction *action = [UIAlertAction actionWithTitle:[buttonTitles objectAtIndex:i] style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            if (actionsBlock) {
-                actionsBlock(i, action.title);
             }
         }];
         [alertController addAction:action];

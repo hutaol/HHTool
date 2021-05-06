@@ -10,6 +10,8 @@
 #import "HHCountryTableViewController.h"
 #import "HHEmptyDataSetTableViewController.h"
 #import "HHPhotoViewController.h"
+#import "HHAlertTableViewController.h"
+#import "HHPopupTableViewController.h"
 
 @interface HHMainViewController ()
 
@@ -24,7 +26,7 @@
 
     self.title = @"例子";
     
-    self.dataArray = @[@"国家列表", @"EmptyDataSet", @"Photo"].mutableCopy;
+    self.dataArray = @[@"国家列表", @"EmptyDataSet", @"Photo", @"Alert", @"Popup"].mutableCopy;
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
     
@@ -66,6 +68,18 @@
         case 2:
         {
             HHPhotoViewController *vc = [[HHPhotoViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case 3:
+        {
+            HHAlertTableViewController *vc = [[HHAlertTableViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case 4:
+        {
+            HHPopupTableViewController *vc = [[HHPopupTableViewController alloc] init];
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;

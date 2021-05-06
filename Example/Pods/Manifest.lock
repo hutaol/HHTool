@@ -5,26 +5,26 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - HHTool (0.1.5):
+  - HHTool (0.1.6):
     - DZNEmptyDataSet (~> 1.8.1)
-    - HXPhotoPicker (~> 3.1.7)
-    - HXPhotoPicker/SDWebImage (~> 3.1.7)
+    - HXPhotoPicker (~> 3.1.9)
+    - HXPhotoPicker/SDWebImage (~> 3.1.9)
     - MBProgressHUD (~> 1.2.0)
     - SPAlertController (~> 4.0.0)
     - Toast (~> 4.0.0)
-    - YBPopupMenu (~> 1.1.6)
-  - HXPhotoPicker (3.1.7):
-    - HXPhotoPicker/Default (= 3.1.7)
-  - HXPhotoPicker/Default (3.1.7)
-  - HXPhotoPicker/SDWebImage (3.1.7):
+    - YBPopupMenu (~> 1.1.9)
+  - HXPhotoPicker (3.1.9):
+    - HXPhotoPicker/Default (= 3.1.9)
+  - HXPhotoPicker/Default (3.1.9)
+  - HXPhotoPicker/SDWebImage (3.1.9):
     - SDWebImage (~> 5.0)
   - MBProgressHUD (1.2.0)
-  - SDWebImage (5.10.0):
-    - SDWebImage/Core (= 5.10.0)
-  - SDWebImage/Core (5.10.0)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
   - SPAlertController (4.0.0)
   - Toast (4.0.0)
-  - YBPopupMenu (1.1.6)
+  - YBPopupMenu (1.1.9)
 
 DEPENDENCIES:
   - FBSnapshotTestCase
@@ -48,14 +48,14 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  HHTool: b9db92b464d06f1351269eae569870f5c38277de
-  HXPhotoPicker: ffd3c644059ad098e6190617b8541825edd595a9
+  HHTool: 6b056382e294a41a9401fa01cf761aa0221f5317
+  HXPhotoPicker: e1816ff27f17c3926f6e83aebbb9f4b329324f0b
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  SDWebImage: 9169792e9eec3e45bba2a0c02f74bf8bd922d1ee
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SPAlertController: b245d7a5e17d612da051f2612aca3703f21d108f
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
-  YBPopupMenu: e143e8ae05f8696ca324814cc984e22346aaa884
+  YBPopupMenu: 3a02e89860bb0568ba477aee609bc3f25e5bd339
 
 PODFILE CHECKSUM: 23e6c122c8af097d53d29547b379b6df41c8b4ef
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.1

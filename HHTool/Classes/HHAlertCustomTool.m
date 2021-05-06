@@ -38,19 +38,19 @@
     SPAlertController *alertController = [SPAlertController alertControllerWithTitle:title message:message preferredStyle:SPAlertControllerStyleAlert];
     alertController.tapBackgroundViewDismiss = NO;
     
-    if (cancelTitle) {
-        SPAlertAction *action = [SPAlertAction actionWithTitle:cancelTitle style:SPAlertActionStyleCancel handler:^(SPAlertAction * _Nonnull action) {
+    for (int i = 0; i < buttonTitles.count; i++) {
+        SPAlertAction *action = [SPAlertAction actionWithTitle:[buttonTitles objectAtIndex:i] style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
             if (actionsBlock) {
-                actionsBlock(-1, action.title);
+                actionsBlock(i, action.title);
             }
         }];
         [alertController addAction:action];
     }
     
-    for (int i = 0; i < buttonTitles.count; i++) {
-        SPAlertAction *action = [SPAlertAction actionWithTitle:[buttonTitles objectAtIndex:i] style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    if (cancelTitle) {
+        SPAlertAction *action = [SPAlertAction actionWithTitle:cancelTitle style:SPAlertActionStyleCancel handler:^(SPAlertAction * _Nonnull action) {
             if (actionsBlock) {
-                actionsBlock(i, action.title);
+                actionsBlock(-1, action.title);
             }
         }];
         [alertController addAction:action];
@@ -64,7 +64,16 @@
 + (void)sheetWithTitle:(NSString *)title message:(NSString *)message cancelTitle:(NSString *)cancelTitle destructiveTitle:(NSString *)destructiveTitle buttonTitles:(NSArray<NSString *> *)buttonTitles actionsBlock:(void (^)(NSInteger, NSString * _Nonnull))actionsBlock {
     
     SPAlertController *alertController = [SPAlertController alertControllerWithTitle:title message:message preferredStyle:SPAlertControllerStyleActionSheet];
-
+    
+    for (int i = 0; i < buttonTitles.count; i++) {
+        SPAlertAction *action = [SPAlertAction actionWithTitle:[buttonTitles objectAtIndex:i] style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+            if (actionsBlock) {
+                actionsBlock(i, action.title);
+            }
+        }];
+        [alertController addAction:action];
+    }
+    
     if (cancelTitle) {
         SPAlertAction *action = [SPAlertAction actionWithTitle:cancelTitle style:SPAlertActionStyleCancel handler:^(SPAlertAction * _Nonnull action) {
             if (actionsBlock) {
@@ -75,18 +84,9 @@
     }
     
     if (destructiveTitle) {
-        SPAlertAction *action = [SPAlertAction actionWithTitle:cancelTitle style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action) {
+        SPAlertAction *action = [SPAlertAction actionWithTitle:destructiveTitle style:SPAlertActionStyleDestructive handler:^(SPAlertAction * _Nonnull action) {
             if (actionsBlock) {
                 actionsBlock(-2, action.title);
-            }
-        }];
-        [alertController addAction:action];
-    }
-    
-    for (int i = 0; i < buttonTitles.count; i++) {
-        SPAlertAction *action = [SPAlertAction actionWithTitle:[buttonTitles objectAtIndex:i] style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
-            if (actionsBlock) {
-                actionsBlock(i, action.title);
             }
         }];
         [alertController addAction:action];

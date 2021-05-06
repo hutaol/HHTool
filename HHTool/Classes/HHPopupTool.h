@@ -7,10 +7,18 @@
 
 #import <Foundation/Foundation.h>
 #import <YBPopupMenu/YBPopupMenu.h>
+#import <SPAlertController/SPAlertController.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSUInteger, HHPopupPosition) {
+    HHPopupPositionCenter,
+    HHPopupPositionBottom,
+};
+
 typedef void (^HHPopupToolDidSelected)(NSInteger index, YBPopupMenu *popupMenu);
+
+typedef void (^HHPopupToolListDidSelected)(NSInteger index, NSString *text);
 
 /**
  简单使用，具体查看YBPopupMenu
@@ -30,6 +38,18 @@ typedef void (^HHPopupToolDidSelected)(NSInteger index, YBPopupMenu *popupMenu);
 + (YBPopupMenu *)showInView:(UIView *)view titles:(NSArray *)titles icons:(nullable NSArray *)icons menuWidth:(CGFloat)menuWidth action:(nullable HHPopupToolDidSelected)action;
 
 + (YBPopupMenu *)showInPoint:(CGPoint)point titles:(NSArray *)titles icons:(nullable NSArray *)icons menuWidth:(CGFloat)menuWidth action:(nullable HHPopupToolDidSelected)action;
+
+
+
++ (SPAlertController *)showPopupView:(UIView *)view;
+
++ (SPAlertController *)showPopupView:(UIView *)view postion:(HHPopupPosition)postion;
+
++ (SPAlertController *)showPopupListTitle:(NSString *)title dataArray:(NSArray *)dataArray postion:(HHPopupPosition)postion action:(nullable HHPopupToolListDidSelected)action;
+
++ (SPAlertController *)showPopupBottomListTitle:(NSString *)title dataArray:(NSArray *)dataArray action:(nullable HHPopupToolListDidSelected)action;
+
++ (SPAlertController *)showPopupCenterListTitle:(NSString *)title dataArray:(NSArray *)dataArray action:(nullable HHPopupToolListDidSelected)action;
 
 @end
 

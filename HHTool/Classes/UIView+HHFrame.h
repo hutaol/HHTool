@@ -41,6 +41,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) CGSize size;
 
+@property (nonatomic, readonly) UIEdgeInsets safeInsets;
+@property (nonatomic, readonly) CGFloat safeBottom;
+
 @end
 
 NS_ASSUME_NONNULL_END

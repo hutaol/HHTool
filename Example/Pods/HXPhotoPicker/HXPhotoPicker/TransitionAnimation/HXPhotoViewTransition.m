@@ -2,8 +2,8 @@
 //  HXPhotoViewTransition.m
 //  HXPhotoPickerExample
 //
-//  Created by 洪欣 on 2017/10/27.
-//  Copyright © 2017年 洪欣. All rights reserved.
+//  Created by Silence on 2017/10/27.
+//  Copyright © 2017年 Silence. All rights reserved.
 //
 
 #import "HXPhotoViewTransition.h"
@@ -47,21 +47,21 @@
     HXPhotoViewController *fromVC = (HXPhotoViewController *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     HXPhotoPreviewViewController *toVC = (HXPhotoPreviewViewController *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     HXPhotoModel *model = [toVC.modelArray objectAtIndex:toVC.currentModelIndex];
-    PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
-    self.requestID = [HXAssetManager requestImageDataForAsset:model.asset options:options completion:^(NSData * _Nonnull imageData, UIImageOrientation orientation, NSDictionary<NSString *,id> * _Nonnull info) {
-        if (imageData) {
-            UIImage *image = [UIImage imageWithData:imageData];
-            if (orientation != UIImageOrientationUp) {
-                image = [image hx_normalizedImage];
-            }
-            self.imageView.image = image;
-        }
-    }];
-    UIImage *image;
+    UIImage *image = model.thumbPhoto ?: model.previewPhoto;;
     if (model.photoEdit) {
         image = model.photoEdit.editPreviewImage;
-    }else {
+    }else if (model.asset){
         image = model.thumbPhoto ?: model.previewPhoto;
+        PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
+        self.requestID = [HXAssetManager requestImageDataForAsset:model.asset options:options completion:^(NSData * _Nonnull imageData, UIImageOrientation orientation, NSDictionary<NSString *,id> * _Nonnull info) {
+            if (imageData) {
+                UIImage *image = [UIImage imageWithData:imageData];
+                if (orientation != UIImageOrientationUp) {
+                    image = [image hx_normalizedImage];
+                }
+                self.imageView.image = image;
+            }
+        }];
     }
     [self pushAnim:transitionContext image:image model:model fromVC:fromVC toVC:toVC];
 }

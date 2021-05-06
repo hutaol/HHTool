@@ -7,6 +7,9 @@
 
 #import "HHPopupTool.h"
 #import "NSString+HHSize.h"
+#import "HHPopupListView.h"
+#import "UIWindow+HHHelper.h"
+
 
 @interface HHPopupTool () <YBPopupMenuDelegate>
 
@@ -29,6 +32,10 @@ static dispatch_once_t onceToken = 0;
 + (void)attempDealloc {
     onceToken = 0;
     _sharedInstance = nil;
+}
+
++ (UIViewController *)topViewController {
+    return [UIWindow topViewController];
 }
 
 + (YBPopupMenu *)showInView:(UIView *)view titles:(NSArray *)titles action:(HHPopupToolDidSelected)action {
@@ -93,6 +100,47 @@ static dispatch_once_t onceToken = 0;
     
     maxWidth += 32;
     return maxWidth;
+}
+
++ (SPAlertController *)showPopupView:(UIView *)view {
+   return [self showPopupView:view postion:HHPopupPositionCenter];
+}
+
++ (SPAlertController *)showPopupView:(UIView *)view postion:(HHPopupPosition)postion {
+    
+    SPAlertControllerStyle preferredStyle = SPAlertControllerStyleAlert;
+    if (postion == HHPopupPositionBottom) {
+        preferredStyle = SPAlertControllerStyleActionSheet;
+    }
+    
+    SPAlertController *alertController = [SPAlertController alertControllerWithCustomAlertView:view preferredStyle:preferredStyle animationType:SPAlertAnimationTypeDefault];
+   [[self topViewController] presentViewController:alertController animated:YES completion:nil];
+    return alertController;
+}
+
++ (SPAlertController *)showPopupListTitle:(NSString *)title dataArray:(NSArray *)dataArray postion:(HHPopupPosition)postion action:(nullable HHPopupToolListDidSelected)action {
+    
+    HHPopupListView *view = [[HHPopupListView alloc] initWithTitle:title dataArray:dataArray];
+    
+    SPAlertController *alertController = [self showPopupView:view postion:postion];
+    
+    view.didRowBlock = ^(NSInteger index, NSString * _Nonnull text) {
+        [alertController dismissViewControllerAnimated:YES completion:^{
+            if (action) {
+                action(index, text);
+            }
+        }];
+        
+    };
+    return alertController;
+}
+
++ (SPAlertController *)showPopupBottomListTitle:(NSString *)title dataArray:(NSArray *)dataArray action:(nullable HHPopupToolListDidSelected)action {
+    return [self showPopupListTitle:title dataArray:dataArray postion:HHPopupPositionBottom action:action];
+}
+
++ (SPAlertController *)showPopupCenterListTitle:(NSString *)title dataArray:(NSArray *)dataArray action:(nullable HHPopupToolListDidSelected)action {
+    return [self showPopupListTitle:title dataArray:dataArray postion:HHPopupPositionCenter action:action];
 }
 
 @end

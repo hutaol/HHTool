@@ -153,4 +153,20 @@
     self.frame = frame;
 }
 
+- (UIEdgeInsets)safeInsets {
+    if (@available(iOS 11.0, *)) {
+        return self.safeAreaInsets;
+    } else {
+        return UIEdgeInsetsZero;
+    }
+}
+
+- (CGFloat)safeBottom {
+    if (@available(iOS 11.0, *)) {
+        return self.safeAreaInsets.bottom;
+    } else {
+        return 0;
+    }
+}
+
 @end
