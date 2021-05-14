@@ -102,7 +102,16 @@
 #pragma mark - UISearchBarDelegate
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    self.isSearch = YES;
     [searchBar setShowsCancelButton:YES];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
+    [searchBar setShowsCancelButton:NO];
+    searchBar.text = @"";
+    self.isSearch = NO;
+    [self.searchResults removeAllObjects];
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
@@ -119,7 +128,6 @@
     
     [self.tableView reloadData];
 
-    
 }
 
 - (UISearchBar *)searchBar {

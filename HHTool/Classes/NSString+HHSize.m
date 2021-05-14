@@ -22,14 +22,20 @@
     if (self.length <= 0) {
         return resultSize;
     }
+    
     NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
-    style.lineBreakMode = NSLineBreakByWordWrapping;
-    resultSize = [self boundingRectWithSize:CGSizeMake(floor(size.width), floor(size.height))//用相对小的 width 去计算 height / 小 heigth 算 width
+    style.lineBreakMode = abreakMode;
+    style.alignment = alignment;
+
+    NSDictionary *attributes = @{NSFontAttributeName:font, NSParagraphStyleAttributeName:style};
+    
+    // 用相对小的 width 去计算 height / 小 heigth 算 width
+    resultSize = [self boundingRectWithSize:CGSizeMake(floor(size.width), floor(size.height))
                                     options:(NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin)
-                                 attributes:@{NSFontAttributeName: font,
-                                              NSParagraphStyleAttributeName: style}
+                                 attributes:attributes
                                     context:nil].size;
-    resultSize = CGSizeMake(floor(resultSize.width + 1), floor(resultSize.height + 1));//上面用的小 width（height） 来计算了，这里要 +1
+    // 上面用的小 width（height） 来计算了，这里要 +1
+    resultSize = CGSizeMake(floor(resultSize.width + 1), floor(resultSize.height + 1));
     return resultSize;
 }
 

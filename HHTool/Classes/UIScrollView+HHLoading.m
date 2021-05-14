@@ -130,7 +130,12 @@ id (^block)(void);
 
 - (UIView *)customViewForEmptyDataSet:(UIScrollView *)scrollView {
     if (self.loading) {
-        UIActivityIndicatorView *activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        UIActivityIndicatorView *activityView = nil;
+        if (@available(iOS 13.0, *)) {
+            activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleMedium];
+        } else {
+            activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        }
         [activityView startAnimating];
         return activityView;
     }
