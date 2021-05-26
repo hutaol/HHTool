@@ -102,6 +102,7 @@ static dispatch_once_t onceToken = 0;
     return maxWidth;
 }
 
+
 + (SPAlertController *)showPopupView:(UIView *)view {
    return [self showPopupView:view postion:HHPopupPositionCenter];
 }
@@ -117,6 +118,27 @@ static dispatch_once_t onceToken = 0;
    [[self topViewController] presentViewController:alertController animated:YES completion:nil];
     return alertController;
 }
+
+
++ (SPAlertController *)showPopupActionView:(UIView *)view {
+    return [self showPopupActionView:view postion:HHPopupPositionCenter];
+ }
+
+ + (SPAlertController *)showPopupActionView:(UIView *)view postion:(HHPopupPosition)postion {
+     return [self showPopupActionView:view title:@"" postion:postion];
+ }
+
++ (SPAlertController *)showPopupActionView:(UIView *)view title:(NSString *)title postion:(HHPopupPosition)postion {
+    SPAlertControllerStyle preferredStyle = SPAlertControllerStyleAlert;
+    if (postion == HHPopupPositionBottom) {
+        preferredStyle = SPAlertControllerStyleActionSheet;
+    }
+    
+    SPAlertController *alertController = [SPAlertController alertControllerWithCustomActionSequenceView:view title:title message:@"" preferredStyle:preferredStyle animationType:SPAlertAnimationTypeDefault];
+    [[self topViewController] presentViewController:alertController animated:YES completion:nil];
+    return alertController;
+}
+
 
 + (SPAlertController *)showPopupListTitle:(NSString *)title dataArray:(NSArray *)dataArray postion:(HHPopupPosition)postion action:(nullable HHPopupToolListDidSelected)action {
     

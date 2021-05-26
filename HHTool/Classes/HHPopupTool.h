@@ -40,10 +40,15 @@ typedef void (^HHPopupToolListDidSelected)(NSInteger index, NSString *text);
 + (YBPopupMenu *)showInPoint:(CGPoint)point titles:(NSArray *)titles icons:(nullable NSArray *)icons menuWidth:(CGFloat)menuWidth action:(nullable HHPopupToolDidSelected)action;
 
 
-
 + (SPAlertController *)showPopupView:(UIView *)view;
 
 + (SPAlertController *)showPopupView:(UIView *)view postion:(HHPopupPosition)postion;
+
++ (SPAlertController *)showPopupActionView:(UIView *)view;
+
++ (SPAlertController *)showPopupActionView:(UIView *)view postion:(HHPopupPosition)postion;
+
++ (SPAlertController *)showPopupActionView:(UIView *)view title:(NSString *)title postion:(HHPopupPosition)postion;
 
 + (SPAlertController *)showPopupListTitle:(NSString *)title dataArray:(NSArray *)dataArray postion:(HHPopupPosition)postion action:(nullable HHPopupToolListDidSelected)action;
 

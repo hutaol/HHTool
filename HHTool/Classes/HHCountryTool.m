@@ -287,5 +287,39 @@ static dispatch_once_t onceToken = 0;
     return country;
 }
 
+- (void)getlocaleCountryCompelete:(void (^)(HHCountry * _Nonnull))compelete {
+    if (self.dataArray.count == 0) {
+        __weak typeof(self) weakSelf = self;
+        [self getCountryCompelete:^(NSArray<HHCountry *> * _Nonnull dataArray) {
+            HHCountry *country = [weakSelf getlocaleCountry];
+            if (compelete) {
+                compelete(country);
+            }
+        }];
+    } else {
+        HHCountry *country = [self getlocaleCountry];
+        if (compelete) {
+            compelete(country);
+        }
+    }
+}
+
+- (void)findCountry:(NSString *)code Compelete:(void (^)(HHCountry * _Nonnull))compelete {
+    if (self.dataArray.count == 0) {
+        __weak typeof(self) weakSelf = self;
+        [self getCountryCompelete:^(NSArray<HHCountry *> * _Nonnull dataArray) {
+            HHCountry *country = [weakSelf findCountry:code];
+            if (compelete) {
+                compelete(country);
+            }
+        }];
+    } else {
+        HHCountry *country = [self findCountry:code];
+        if (compelete) {
+            compelete(country);
+        }
+    }
+}
+
 @end
 
