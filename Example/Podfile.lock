@@ -5,7 +5,7 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - HHTool (0.1.6):
+  - HHTool (0.2.2):
     - DZNEmptyDataSet (~> 1.8.1)
     - HXPhotoPicker (~> 3.1.9)
     - HXPhotoPicker/SDWebImage (~> 3.1.9)
@@ -48,7 +48,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  HHTool: 6b056382e294a41a9401fa01cf761aa0221f5317
+  HHTool: 5da6b497f1efb0c1aea9b462b831ba6491136d05
   HXPhotoPicker: e1816ff27f17c3926f6e83aebbb9f4b329324f0b
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
