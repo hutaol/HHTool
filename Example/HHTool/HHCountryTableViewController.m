@@ -32,7 +32,7 @@
     self.tableView.tableHeaderView = self.searchBar;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
 
-    [HHConfiguration languageType:HHLanguageChineseTraditional];
+    [HHConfiguration languageType:HHLanguageChineseSimplified];
     
     [[HHCountryTool sharedInstance] getCountrySection:NO compelete:^(NSArray<HHCountry *> * _Nonnull dataArray, NSArray<HHCountry *> * _Nonnull sectionArray, NSArray<NSString *> * _Nonnull sectionTitlesArray) {
         self.dataArray = dataArray.mutableCopy;

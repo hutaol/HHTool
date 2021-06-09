@@ -9,7 +9,7 @@
 #import "NSString+HHSize.h"
 #import "HHPopupListView.h"
 #import "UIWindow+HHHelper.h"
-
+#import "HHDefine.h"
 
 @interface HHPopupTool () <YBPopupMenuDelegate>
 
@@ -135,6 +135,27 @@ static dispatch_once_t onceToken = 0;
     }
     
     SPAlertController *alertController = [SPAlertController alertControllerWithCustomActionSequenceView:view title:title message:@"" preferredStyle:preferredStyle animationType:SPAlertAnimationTypeDefault];
+    [[self topViewController] presentViewController:alertController animated:YES completion:nil];
+    return alertController;
+}
+
++ (SPAlertController *)showPopupHeaderView:(UIView *)view {
+    return [self showPopupHeaderView:view postion:HHPopupPositionBottom showCancel:YES];
+};
+
++ (SPAlertController *)showPopupHeaderView:(UIView *)view postion:(HHPopupPosition)postion showCancel:(BOOL)showCancel {
+    SPAlertControllerStyle preferredStyle = SPAlertControllerStyleAlert;
+    if (postion == HHPopupPositionBottom) {
+        preferredStyle = SPAlertControllerStyleActionSheet;
+    }
+    
+    SPAlertController *alertController = [SPAlertController alertControllerWithCustomHeaderView:view preferredStyle:preferredStyle animationType:SPAlertAnimationTypeDefault];
+    
+    if (showCancel) {
+        SPAlertAction *action = [SPAlertAction actionWithTitle:GetLocalLanguageTextValue(@"Cancel") style:SPAlertActionStyleCancel handler:nil];
+        [alertController addAction:action];
+    }
+    
     [[self topViewController] presentViewController:alertController animated:YES completion:nil];
     return alertController;
 }

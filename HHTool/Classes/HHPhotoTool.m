@@ -311,7 +311,7 @@
 }
 
 
-/// 预览图片|视频
+/// 预览图片
 + (void)showImageWithController:(UIViewController *)vc source:(NSArray *)source previews:(NSArray *)previews index:(NSInteger)index {
     
     NSMutableArray *arrImages = [NSMutableArray array];
@@ -346,7 +346,7 @@
     photoManager.configuration.selectTogether = YES;
     photoManager.configuration.photoCanEdit = NO;
     photoManager.configuration.videoCanEdit = NO;
-    photoManager.configuration.videoAutoPlayType = YES;
+    photoManager.configuration.videoAutoPlayType = HXVideoAutoPlayTypeAll;
 
     photoManager.configuration.languageType = [self getLanaguage];
     
@@ -406,6 +406,61 @@
                                          previewStyle:HXPhotoViewPreViewShowStyleDark
                                          currentIndex:index
                                             photoView:nil];
+}
+
+
+/// 预览视频
++ (void)showVideoWithController:(UIViewController *)vc videoURL:(NSURL *)videoURL coverURL:(NSURL *)converURL videoDuration:(NSTimeInterval)videoDuration preview:(UIView *)preview {
+    
+    HXCustomAssetModel *model = [HXCustomAssetModel assetWithNetworkVideoURL:videoURL videoCoverURL:converURL videoDuration:videoDuration selected:YES];
+    
+    HXPhotoManager *photoManager = [HXPhotoManager managerWithType:HXPhotoManagerSelectedTypePhotoAndVideo];
+    photoManager.configuration.saveSystemAblum = YES;
+    photoManager.configuration.photoMaxNum = 0;
+    photoManager.configuration.videoMaxNum = 0;
+    photoManager.configuration.maxNum = 10;
+    photoManager.configuration.selectTogether = YES;
+    photoManager.configuration.photoCanEdit = NO;
+    photoManager.configuration.videoCanEdit = NO;
+    photoManager.configuration.videoAutoPlayType = HXVideoAutoPlayTypeAll;
+    photoManager.configuration.languageType = [self getLanaguage];
+    
+    [photoManager addCustomAssetModel:@[model]];
+    
+    // 长按事件
+    photoManager.configuration.previewRespondsToLongPress = ^(UILongPressGestureRecognizer *longPress, HXPhotoModel *photoModel, HXPhotoManager *manager, HXPhotoPreviewViewController *previewViewController) {
+        HXPhotoBottomViewModel *model = [[HXPhotoBottomViewModel alloc] init];
+        model.title = GetLocalLanguageTextValue(@"Save");
+        [HXPhotoBottomSelectView showSelectViewWithModels:@[model] headerView:nil cancelTitle:nil selectCompletion:^(NSInteger index, HXPhotoBottomViewModel * _Nonnull model) {
+            if (index == 0) {
+                // 保存
+                [HHPhotoTool saveToAlbumAtVideoURL:photoModel.videoURL];
+            }
+        } cancelClick:nil];
+    };
+    
+    // 跳转预览界面时动画起始的view
+    photoManager.configuration.customPreviewFromView = ^UIView *(NSInteger currentIndex) {
+        return preview;
+    };
+    // 跳转预览界面时展现动画的image
+    photoManager.configuration.customPreviewFromImage = ^UIImage *(NSInteger currentIndex) {
+        if ([preview isKindOfClass:[UIImageView class]]) {
+            UIImageView *imageView = (UIImageView *)preview;
+            return imageView.image;
+        }
+        return nil;
+    };
+    // 退出预览界面时终点view
+    photoManager.configuration.customPreviewToView = ^UIView *(NSInteger currentIndex) {
+        return preview;
+    };
+
+    [vc hx_presentPreviewPhotoControllerWithManager:photoManager
+                                         previewStyle:HXPhotoViewPreViewShowStyleDark
+                                         currentIndex:0
+                                            photoView:nil];
+
 }
 
 

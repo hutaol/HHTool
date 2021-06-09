@@ -54,6 +54,13 @@
             
         } else if (model.type == HHPhotoModelMediaTypePhoto) {
             self.imageView.image = model.image;
+        } else if (model.type == HHPhotoModelMediaTypeVideo) {
+//            self.imageView.image = model.image;
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [HHPhotoTool showVideoWithController:self videoURL:model.videoURL coverURL:nil videoDuration:0 preview:nil];
+
+            });
         }
         
     }];

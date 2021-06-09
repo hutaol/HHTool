@@ -13,7 +13,7 @@
 #import "NSBundle+HXPhotoPicker.h"
 
 /// 当前版本
-#define HXVersion @"3.1.9"
+#define HXVersion @"3.2.1"
 
 // 日志输出
 #ifdef DEBUG
@@ -110,7 +110,7 @@
 #define HX_IS_IPhoneX_All (HX_Is_iPhoneX || HX_Is_iPhoneXR || HX_Is_iPhoneXS || HX_Is_iPhoneXS_MAX || HX_IS_IPHONEX || HX_Is_iPhoneTwelveMini || HX_Is_iPhoneTwelvePro || HX_Is_iPhoneTwelveProMax)
 
 // 导航栏 + 状态栏 的高度
-#define hxNavigationBarHeight (44 + HXStatusBarHeight)
+#define hxNavigationBarHeight ((HX_UI_IS_IPAD ? 50 : 44) + HXStatusBarHeight)
 #define hxTopMargin (HX_IS_IPhoneX_All ? 44 : 0)
 #define hxBottomMargin (HX_IS_IPhoneX_All ? 34 : 0)
 #define HXStatusBarHeight [HXPhotoTools getStatusBarHeight]

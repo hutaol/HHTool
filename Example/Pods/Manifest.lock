@@ -1,4 +1,19 @@
 PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
   - DZNEmptyDataSet (1.8.1)
   - FBSnapshotTestCase (2.1.4):
     - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
@@ -7,16 +22,17 @@ PODS:
     - FBSnapshotTestCase/Core
   - HHTool (0.2.2):
     - DZNEmptyDataSet (~> 1.8.1)
-    - HXPhotoPicker (~> 3.1.9)
-    - HXPhotoPicker/SDWebImage (~> 3.1.9)
+    - HXPhotoPicker (~> 3.2.1)
+    - HXPhotoPicker/SDWebImage_AF (~> 3.2.1)
     - MBProgressHUD (~> 1.2.0)
     - SPAlertController (~> 4.0.0)
     - Toast (~> 4.0.0)
     - YBPopupMenu (~> 1.1.9)
-  - HXPhotoPicker (3.1.9):
-    - HXPhotoPicker/Default (= 3.1.9)
-  - HXPhotoPicker/Default (3.1.9)
-  - HXPhotoPicker/SDWebImage (3.1.9):
+  - HXPhotoPicker (3.2.1):
+    - HXPhotoPicker/Default (= 3.2.1)
+  - HXPhotoPicker/Default (3.2.1)
+  - HXPhotoPicker/SDWebImage_AF (3.2.1):
+    - AFNetworking
     - SDWebImage (~> 5.0)
   - MBProgressHUD (1.2.0)
   - SDWebImage (5.11.1):
@@ -32,6 +48,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - AFNetworking
     - DZNEmptyDataSet
     - FBSnapshotTestCase
     - HXPhotoPicker
@@ -46,10 +63,11 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  HHTool: 5da6b497f1efb0c1aea9b462b831ba6491136d05
-  HXPhotoPicker: e1816ff27f17c3926f6e83aebbb9f4b329324f0b
+  HHTool: 3d3233eee72c9bf5f2eac33fd717449fb8845e68
+  HXPhotoPicker: ae88dd5b4e838e255b3fcd1143dc82a5fe1774f5
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SPAlertController: b245d7a5e17d612da051f2612aca3703f21d108f

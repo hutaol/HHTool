@@ -15,9 +15,16 @@
     return [UIWindow topViewController];
 }
 
+
+
 // 确定 警示框
 + (void)alertWithMessage:(NSString *)message {
     [self alertWithTitle:GetLocalLanguageTextValue(@"Tips") message:message cancelTitle:nil buttonTitles:@[GetLocalLanguageTextValue(@"Done")] actionsBlock:nil];
+}
+
+/// 一个按钮
++ (void)alertWithTitle:(NSString *)title message:(NSString *)message button:(NSString *)button confirmBlock:(void (^)(NSInteger, NSString * _Nonnull))confirmBlock {
+    [self alertWithTitle:GetLocalLanguageTextValue(@"Tips") message:message cancelTitle:nil buttonTitles:@[GetLocalLanguageTextValue(@"Done")] actionsBlock:confirmBlock];
 }
 
 // 取消，确定 警示框
@@ -34,7 +41,7 @@
 
 + (void)alert2WithMessage:(NSString *)message cancel:(NSString *)cancel confirm:(NSString *)confirm confirmBlock:(void (^)(NSInteger, NSString * _Nonnull))confirmBlock {
 
-    [self alertWithTitle:GetLocalLanguageTextValue(@"提示") message:message cancelTitle:cancel buttonTitles:@[confirm] actionsBlock:^(NSInteger buttonIndex, NSString * _Nonnull buttonTitle) {
+    [self alertWithTitle:GetLocalLanguageTextValue(@"Tips") message:message cancelTitle:cancel buttonTitles:@[confirm] actionsBlock:^(NSInteger buttonIndex, NSString * _Nonnull buttonTitle) {
         if (buttonIndex == 0) {
             if (confirmBlock) {
                 confirmBlock(0, buttonTitle);

@@ -48,13 +48,20 @@ typedef void (^HHPhotoToolMultipleCompletion)(NSArray <HHPhotoModel *> *images);
 + (void)cameraWithController:(UIViewController *)vc video:(BOOL)video edit:(BOOL)edit system:(BOOL)system completion:(HHPhotoToolCompletion)completion;
 
 
-/// 预览图片|视频
+/// 预览图片
 /// @param vc sender
 /// @param source 3种类型 NSURL UIImage NSString(路径)
 /// @param previews 小图imageView
 /// @param index 第几张
 + (void)showImageWithController:(UIViewController *)vc source:(NSArray *)source previews:(nullable NSArray *)previews index:(NSInteger)index;
 
+/// 预览视频
+/// @param vc sender
+/// @param videoURL 视频地址URL
+/// @param converURL 缩略图地址URL
+/// @param videoDuration 视频时间
+/// @param preview 小图imageView
++ (void)showVideoWithController:(UIViewController *)vc videoURL:(NSURL *)videoURL coverURL:(nullable NSURL *)converURL videoDuration:(NSTimeInterval)videoDuration preview:(nullable UIView *)preview;
 
 /// 编辑图片|视频
 /// @param vc sender

@@ -31,10 +31,10 @@
       "~> 1.2.0"
     ],
     "HXPhotoPicker": [
-      "~> 3.1.9"
+      "~> 3.2.1"
     ],
-    "HXPhotoPicker/SDWebImage": [
-      "~> 3.1.9"
+    "HXPhotoPicker/SDWebImage_AF": [
+      "~> 3.2.1"
     ],
     "YBPopupMenu": [
       "~> 1.1.9"

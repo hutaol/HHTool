@@ -50,6 +50,10 @@ typedef void (^HHPopupToolListDidSelected)(NSInteger index, NSString *text);
 
 + (SPAlertController *)showPopupActionView:(UIView *)view title:(NSString *)title postion:(HHPopupPosition)postion;
 
++ (SPAlertController *)showPopupHeaderView:(UIView *)view;
+
++ (SPAlertController *)showPopupHeaderView:(UIView *)view postion:(HHPopupPosition)postion showCancel:(BOOL)showCancel;
+
 + (SPAlertController *)showPopupListTitle:(NSString *)title dataArray:(NSArray *)dataArray postion:(HHPopupPosition)postion action:(nullable HHPopupToolListDidSelected)action;
 
 + (SPAlertController *)showPopupBottomListTitle:(NSString *)title dataArray:(NSArray *)dataArray action:(nullable HHPopupToolListDidSelected)action;

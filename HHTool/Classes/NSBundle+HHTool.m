@@ -17,7 +17,7 @@
         NSURL *bundleURL = [bundle URLForResource:@"HHTool" withExtension:@"bundle"];
         NSBundle *resourceBundle = [NSBundle bundleWithURL:bundleURL];
         if (!resourceBundle) {
-            NSString * bundlePath = [bundle.resourcePath stringByAppendingPathComponent:@"HHTool.bundle"];
+            NSString *bundlePath = [bundle.resourcePath stringByAppendingPathComponent:@"HHTool.bundle"];
             resourceBundle = [NSBundle bundleWithPath:bundlePath];
         }
         hhBundle = resourceBundle ?: bundle;
