@@ -19,6 +19,11 @@
                 break;
             }
         }
+        if (foundWindow == nil) {
+            if (windows.count > 0) {
+                foundWindow = windows[0];
+            }
+        }
         return foundWindow;
     }
     return [UIApplication sharedApplication].keyWindow;
