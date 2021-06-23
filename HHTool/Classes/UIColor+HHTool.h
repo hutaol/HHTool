@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIColor *)hh_colorWithHex:(long)hex;
 + (UIColor *)hh_colorWithIntegerRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue alpha:(CGFloat)alpha;
 
++ (UIColor *)hh_colorWithLightColor:(UIColor *)lightColor darkColor:(UIColor *)darkColor;
+
 @end
 
 NS_ASSUME_NONNULL_END

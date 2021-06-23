@@ -24,11 +24,16 @@
 #import "HHUIImagePicker.h"
 #import "MBProgressHUD+HHTool.h"
 #import "NSBundle+HHTool.h"
+#import "NSString+HHHash.h"
 #import "NSString+HHSize.h"
 #import "UIColor+HHTool.h"
 #import "UIFont+HHSize.h"
+#import "UIImage+HHColor.h"
+#import "UIImage+HHCompress.h"
+#import "UIImageView+HHCornerRadius.h"
 #import "UIScrollView+HHLoading.h"
 #import "UIView+HHFrame.h"
+#import "UIView+HHLayout.h"
 #import "UIWindow+HHHelper.h"
 
 FOUNDATION_EXPORT double HHToolVersionNumber;

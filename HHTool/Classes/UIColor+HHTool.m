@@ -109,4 +109,21 @@
     return [UIColor colorWithRed:fRed / 255.0 green:fGreen / 255.0 blue:fBlue / 255.0 alpha:alpha];
 }
 
++ (UIColor *)hh_colorWithLightColor:(UIColor *)lightColor darkColor:(UIColor *)darkColor {
+    if (@available(iOS 13.0, *)) {
+        return [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if ( traitCollection.userInterfaceStyle == UIUserInterfaceStyleLight ) {
+                return lightColor;
+            } else if ( traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark ) {
+                return darkColor;
+            } else {
+                return lightColor;
+            }
+        }];
+    } else {
+        return lightColor;
+    }
+}
+
+
 @end
