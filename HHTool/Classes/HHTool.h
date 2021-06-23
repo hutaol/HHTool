@@ -16,15 +16,23 @@
 #import "HHUIImagePicker.h"
 #import "HHPopupTool.h"
 #import "HHCountryTool.h"
+#import "HHAudioTool.h"
+#import "HHAudioRecorder.h"
+#import "HHAudioPlayer.h"
 
 #import "HHConfiguration.h"
 
-#import "UIView+HHFrame.h"
 #import "MBProgressHUD+HHTool.h"
-#import "UIWindow+HHHelper.h"
-#import "UIFont+HHSize.h"
-#import "NSString+HHSize.h"
 #import "UIScrollView+HHLoading.h"
+
+#import "NSString+HHSize.h"
+#import "UIColor+HHTool.h"
+#import "UIFont+HHSize.h"
+#import "UIImage+HHColor.h"
+#import "UIImage+HHCompress.h"
 #import "UIImageView+HHCornerRadius.h"
+#import "UIView+HHFrame.h"
+#import "UIView+HHLayout.h"
+#import "UIWindow+HHHelper.h"
 
 #endif /* HHTool_h */

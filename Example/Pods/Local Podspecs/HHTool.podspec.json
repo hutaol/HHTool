@@ -1,9 +1,9 @@
 {
   "name": "HHTool",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "summary": "A short description of HHTool.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/hutaol/HHTool",
+  "homepage": "https://gitee.com/hate/HHTool",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,14 +12,15 @@
     "Henry": "1325049637@qq.com"
   },
   "source": {
-    "git": "https://github.com/hutaol/HHTool.git",
-    "tag": "0.2.4"
+    "git": "https://gitee.com/hate/HHTool.git",
+    "tag": "0.2.5"
   },
   "platforms": {
     "ios": "9.0"
   },
   "source_files": "HHTool/Classes/**/*",
-  "resources": "HHTool/Assets/*.{png,xib,nib,bundle}",
+  "resources": "HHTool/Assets/*",
+  "vendored_libraries": "HHTool/Classes/Lame/libmp3lame.a",
   "dependencies": {
     "Toast": [
       "~> 4.0.0"

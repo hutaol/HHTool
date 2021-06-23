@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HHTool'
-  s.version          = '0.2.5'
+  s.version          = '0.3.0'
   s.summary          = 'A short description of HHTool.'
 
 # This description is used to generate tags and improve search results.
@@ -31,17 +31,10 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'HHTool/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'HHTool' => ['HHTool/Assets/*.png']
-  # }
+  s.resources   = 'HHTool/Assets/*'
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.vendored_libraries = 'HHTool/Classes/Lame/libmp3lame.a'
   
-  s.resources   = 'HHTool/Assets/*.{png,xib,nib,bundle}'
-
   s.dependency 'Toast', '~> 4.0.0'
   s.dependency 'SPAlertController', '~> 4.0.0'
   s.dependency 'MBProgressHUD', '~> 1.2.0'

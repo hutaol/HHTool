@@ -12,6 +12,7 @@
 #import "HHPhotoViewController.h"
 #import "HHAlertTableViewController.h"
 #import "HHPopupTableViewController.h"
+#import "HHAudioRecorderViewController.h"
 
 @interface HHMainViewController ()
 
@@ -26,7 +27,7 @@
 
     self.title = @"例子";
     
-    self.dataArray = @[@"国家列表", @"EmptyDataSet", @"Photo", @"Alert", @"Popup"].mutableCopy;
+    self.dataArray = @[@"国家列表", @"EmptyDataSet", @"Photo", @"Alert", @"Popup", @"录制音频"].mutableCopy;
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
     
@@ -80,6 +81,12 @@
         case 4:
         {
             HHPopupTableViewController *vc = [[HHPopupTableViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case 5:
+        {
+            HHAudioRecorderViewController *vc = [[HHAudioRecorderViewController alloc] init];
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;

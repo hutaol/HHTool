@@ -1,6 +1,5 @@
 # HHTool
 
-[![CI Status](https://img.shields.io/travis/1325049637@qq.com/HHTool.svg?style=flat)](https://travis-ci.org/1325049637@qq.com/HHTool)
 [![Version](https://img.shields.io/cocoapods/v/HHTool.svg?style=flat)](https://cocoapods.org/pods/HHTool)
 [![License](https://img.shields.io/cocoapods/l/HHTool.svg?style=flat)](https://cocoapods.org/pods/HHTool)
 [![Platform](https://img.shields.io/cocoapods/p/HHTool.svg?style=flat)](https://cocoapods.org/pods/HHTool)
@@ -22,7 +21,7 @@ pod 'HHTool'
 
 ## Author
 
-1325049637@qq.com, 1325049637@qq.com
+1325049637@qq.com
 
 ## License
 

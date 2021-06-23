@@ -181,7 +181,7 @@ const char kProcessedImage;
     [self hh_LayoutSubviews];
     if (self.hhIsRounding) {
         [self hh_cornerRadiusWithImage:self.image cornerRadius:self.frame.size.width/2 rectCorner:UIRectCornerAllCorners];
-    } else if (0 != self.hhRadius && 0 != self.roundingCorners && nil != self.image) {
+    } else if (0 != self.hhRadius && 0 != self.hhRoundCorner && nil != self.image) {
         [self hh_cornerRadiusWithImage:self.image cornerRadius:self.hhRadius rectCorner:self.hhRoundCorner];
     }
 }
@@ -199,7 +199,7 @@ const char kProcessedImage;
         [self validateFrame];
         if (self.hhIsRounding) {
             [self hh_cornerRadiusWithImage:newImage cornerRadius:self.frame.size.width/2 rectCorner:UIRectCornerAllCorners];
-        } else if (0 != self.hhRadius && 0 != self.roundingCorners && nil != self.image) {
+        } else if (0 != self.hhRadius && 0 != self.hhRoundCorner && nil != self.image) {
             [self hh_cornerRadiusWithImage:newImage cornerRadius:self.hhRadius rectCorner:self.hhRoundCorner];
         }
     }
@@ -239,12 +239,12 @@ const char kProcessedImage;
     objc_setAssociatedObject(self, @selector(hhIsRounding), @(hhIsRounding), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (UIRectCorner)roundingCorners {
+- (UIRectCorner)hhRoundCorner {
     return [objc_getAssociatedObject(self, _cmd) unsignedLongValue];
 }
-
-- (void)setRoundingCorners:(UIRectCorner)roundingCorners {
-    objc_setAssociatedObject(self, @selector(roundingCorners), @(roundingCorners), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
+- (void)setHhRoundCorner:(UIRectCorner)hhRoundCorner {
+    objc_setAssociatedObject(self, @selector(hhRoundCorner), @(hhRoundCorner), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (CGFloat)hhRadius {

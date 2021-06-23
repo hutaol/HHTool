@@ -12,6 +12,9 @@
 
 #import "HHAlertCustomTool.h"
 #import "HHAlertTool.h"
+#import "HHAudioPlayer.h"
+#import "HHAudioRecorder.h"
+#import "HHAudioTool.h"
 #import "HHConfiguration.h"
 #import "HHCountryTool.h"
 #import "HHDefine.h"
@@ -22,6 +25,7 @@
 #import "HHToastTool.h"
 #import "HHTool.h"
 #import "HHUIImagePicker.h"
+#import "lame.h"
 #import "MBProgressHUD+HHTool.h"
 #import "NSBundle+HHTool.h"
 #import "NSString+HHHash.h"
