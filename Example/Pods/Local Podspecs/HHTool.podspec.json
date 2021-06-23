@@ -1,9 +1,9 @@
 {
   "name": "HHTool",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "summary": "A short description of HHTool.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://gitee.com/hate/HHTool",
+  "homepage": "https://github.com/hutaol/HHTool",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,8 +12,8 @@
     "Henry": "1325049637@qq.com"
   },
   "source": {
-    "git": "https://gitee.com/hate/HHTool.git",
-    "tag": "0.2.5"
+    "git": "https://github.com/hutaol/HHTool.git",
+    "tag": "0.3.0"
   },
   "platforms": {
     "ios": "9.0"

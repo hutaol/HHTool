@@ -25,6 +25,8 @@
 #import "MBProgressHUD+HHTool.h"
 #import "UIScrollView+HHLoading.h"
 
+#import "NSDate+HHTime.h"
+#import "NSString+HHHash.h"
 #import "NSString+HHSize.h"
 #import "UIColor+HHTool.h"
 #import "UIFont+HHSize.h"

@@ -28,6 +28,7 @@
 #import "lame.h"
 #import "MBProgressHUD+HHTool.h"
 #import "NSBundle+HHTool.h"
+#import "NSDate+HHTime.h"
 #import "NSString+HHHash.h"
 #import "NSString+HHSize.h"
 #import "UIColor+HHTool.h"
