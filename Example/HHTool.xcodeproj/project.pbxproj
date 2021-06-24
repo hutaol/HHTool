@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		35283ADE268317F30021D68F /* HHAudioRecorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35283ADD268317F30021D68F /* HHAudioRecorderViewController.m */; };
+		352AECBA268454F700C1CE80 /* HHButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 352AECB9268454F700C1CE80 /* HHButtonViewController.m */; };
 		354FBD8625A43C6B00736FEA /* HHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 354FBD8525A43C6B00736FEA /* HHMainViewController.m */; };
 		354FBD9C25A444D500736FEA /* HHEmptyDataSetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 354FBD9B25A444D500736FEA /* HHEmptyDataSetTableViewController.m */; };
 		357A67DD25B440B4007D43FF /* HHPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A67DC25B440B4007D43FF /* HHPhotoViewController.m */; };
@@ -47,6 +48,8 @@
 		0F144757A172ED2CD98E74A1 /* Pods-HHTool_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HHTool_Tests.debug.xcconfig"; path = "Target Support Files/Pods-HHTool_Tests/Pods-HHTool_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		35283ADC268317F30021D68F /* HHAudioRecorderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHAudioRecorderViewController.h; sourceTree = "<group>"; };
 		35283ADD268317F30021D68F /* HHAudioRecorderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHAudioRecorderViewController.m; sourceTree = "<group>"; };
+		352AECB8268454F700C1CE80 /* HHButtonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHButtonViewController.h; sourceTree = "<group>"; };
+		352AECB9268454F700C1CE80 /* HHButtonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHButtonViewController.m; sourceTree = "<group>"; };
 		354FBD8425A43C6B00736FEA /* HHMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHMainViewController.h; sourceTree = "<group>"; };
 		354FBD8525A43C6B00736FEA /* HHMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHMainViewController.m; sourceTree = "<group>"; };
 		354FBD9A25A444D500736FEA /* HHEmptyDataSetTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHEmptyDataSetTableViewController.h; sourceTree = "<group>"; };
@@ -167,6 +170,8 @@
 				357A67DC25B440B4007D43FF /* HHPhotoViewController.m */,
 				35283ADC268317F30021D68F /* HHAudioRecorderViewController.h */,
 				35283ADD268317F30021D68F /* HHAudioRecorderViewController.m */,
+				352AECB8268454F700C1CE80 /* HHButtonViewController.h */,
+				352AECB9268454F700C1CE80 /* HHButtonViewController.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -433,6 +438,7 @@
 				359C0ED225A0D5980088844B /* HHCountryTableViewController.m in Sources */,
 				357FD1B8264385DC00D6484F /* HHPopupTableViewController.m in Sources */,
 				354FBD8625A43C6B00736FEA /* HHMainViewController.m in Sources */,
+				352AECBA268454F700C1CE80 /* HHButtonViewController.m in Sources */,
 				357A67DD25B440B4007D43FF /* HHPhotoViewController.m in Sources */,
 				6003F59E195388D20070C39A /* HHAppDelegate.m in Sources */,
 				357FD1B526437A7900D6484F /* HHAlertTableViewController.m in Sources */,

@@ -31,6 +31,7 @@
 #import "NSDate+HHTime.h"
 #import "NSString+HHHash.h"
 #import "NSString+HHSize.h"
+#import "UIButton+HHTitleImage.h"
 #import "UIColor+HHTool.h"
 #import "UIFont+HHSize.h"
 #import "UIImage+HHColor.h"
