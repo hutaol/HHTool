@@ -74,7 +74,7 @@
             _imgPickC.cameraOverlayView = view;
             [_vc presentViewController:_imgPickC animated:YES completion:nil];
         } else {
-            [HHAlertTool alertWithMessage:GetLocalLanguageTextValue(@"CameraNotAvailable")];
+            [HHAlertTool alertWithMessage:HHGetLocalLanguageTextValue(@"CameraNotAvailable")];
         }
     } else if (pickerType == PickerType_Photo) {
         // 相册
@@ -84,7 +84,7 @@
             _imgPickC.allowsEditing = YES;
             [_vc presentViewController:_imgPickC animated:YES completion:nil];
         } else {
-            [HHAlertTool alertWithMessage:GetLocalLanguageTextValue(@"CameraNotAvailable")];
+            [HHAlertTool alertWithMessage:HHGetLocalLanguageTextValue(@"CameraNotAvailable")];
         }
 
     }

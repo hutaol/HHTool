@@ -79,10 +79,10 @@
     model1.canSelect = NO;
     
     HXPhotoBottomViewModel *model2 = [[HXPhotoBottomViewModel alloc] init];
-    model2.title = GetLocalLanguageTextValue(@"TakePicture");
+    model2.title = HHGetLocalLanguageTextValue(@"TakePicture");
     
     HXPhotoBottomViewModel *model3 = [[HXPhotoBottomViewModel alloc] init];
-    model3.title = GetLocalLanguageTextValue(@"SelectFromPhoneAlbum");
+    model3.title = HHGetLocalLanguageTextValue(@"SelectFromPhoneAlbum");
     
     HXPhotoManager *photoManager = [HXPhotoManager managerWithType:HXPhotoManagerSelectedTypePhoto];
     
@@ -128,10 +128,10 @@
     model1.canSelect = NO;
     
     HXPhotoBottomViewModel *model2 = [[HXPhotoBottomViewModel alloc] init];
-    model2.title = GetLocalLanguageTextValue(@"TakePicture");
+    model2.title = HHGetLocalLanguageTextValue(@"TakePicture");
     
     HXPhotoBottomViewModel *model3 = [[HXPhotoBottomViewModel alloc] init];
-    model3.title = GetLocalLanguageTextValue(@"SelectFromPhoneAlbum");
+    model3.title = HHGetLocalLanguageTextValue(@"SelectFromPhoneAlbum");
     
     HXPhotoManager *photoManager = [HXPhotoManager managerWithType:HXPhotoManagerSelectedTypePhoto];
     
@@ -353,7 +353,7 @@
     // 长按事件
     photoManager.configuration.previewRespondsToLongPress = ^(UILongPressGestureRecognizer *longPress, HXPhotoModel *photoModel, HXPhotoManager *manager, HXPhotoPreviewViewController *previewViewController) {
         HXPhotoBottomViewModel *model = [[HXPhotoBottomViewModel alloc] init];
-        model.title = GetLocalLanguageTextValue(@"Save");
+        model.title = HHGetLocalLanguageTextValue(@"Save");
         [HXPhotoBottomSelectView showSelectViewWithModels:@[model] headerView:nil cancelTitle:nil selectCompletion:^(NSInteger index, HXPhotoBottomViewModel * _Nonnull model) {
             if (index == 0) {
                 // 保存
@@ -430,7 +430,7 @@
     // 长按事件
     photoManager.configuration.previewRespondsToLongPress = ^(UILongPressGestureRecognizer *longPress, HXPhotoModel *photoModel, HXPhotoManager *manager, HXPhotoPreviewViewController *previewViewController) {
         HXPhotoBottomViewModel *model = [[HXPhotoBottomViewModel alloc] init];
-        model.title = GetLocalLanguageTextValue(@"Save");
+        model.title = HHGetLocalLanguageTextValue(@"Save");
         [HXPhotoBottomSelectView showSelectViewWithModels:@[model] headerView:nil cancelTitle:nil selectCompletion:^(NSInteger index, HXPhotoBottomViewModel * _Nonnull model) {
             if (index == 0) {
                 // 保存
@@ -535,9 +535,9 @@
     } error:&error];
     BOOL success = createdAssetID && !error;
     if (success) {
-        [HHToastTool showAtCenter:GetLocalLanguageTextValue(@"SaveSuccess")];
+        [HHToastTool showAtCenter:HHGetLocalLanguageTextValue(@"SaveSuccess")];
     } else {
-        [HHToastTool showAtCenter:GetLocalLanguageTextValue(@"SaveFailed")];
+        [HHToastTool showAtCenter:HHGetLocalLanguageTextValue(@"SaveFailed")];
     }
     return success;
 }
@@ -548,9 +548,9 @@
     }
     [HXPhotoTools savePhotoToCustomAlbumWithName:nil photo:image location:nil complete:^(HXPhotoModel * _Nullable model, BOOL success) {
         if (success) {
-            [HHToastTool showAtCenter:GetLocalLanguageTextValue(@"SaveSuccess")];
+            [HHToastTool showAtCenter:HHGetLocalLanguageTextValue(@"SaveSuccess")];
         } else {
-            [HHToastTool showAtCenter:GetLocalLanguageTextValue(@"SaveFailed")];
+            [HHToastTool showAtCenter:HHGetLocalLanguageTextValue(@"SaveFailed")];
         }
     }];
     return YES;
@@ -562,9 +562,9 @@
     }
     [HXPhotoTools saveVideoToCustomAlbumWithName:nil videoURL:videoURL location:nil complete:^(HXPhotoModel * _Nullable model, BOOL success) {
         if (success) {
-            [HHToastTool showAtCenter:GetLocalLanguageTextValue(@"SaveSuccess")];
+            [HHToastTool showAtCenter:HHGetLocalLanguageTextValue(@"SaveSuccess")];
         } else {
-            [HHToastTool showAtCenter:GetLocalLanguageTextValue(@"SaveFailed")];
+            [HHToastTool showAtCenter:HHGetLocalLanguageTextValue(@"SaveFailed")];
         }
     }];
     return YES;

@@ -152,7 +152,7 @@ static dispatch_once_t onceToken = 0;
     SPAlertController *alertController = [SPAlertController alertControllerWithCustomHeaderView:view preferredStyle:preferredStyle animationType:SPAlertAnimationTypeDefault];
     
     if (showCancel) {
-        SPAlertAction *action = [SPAlertAction actionWithTitle:GetLocalLanguageTextValue(@"Cancel") style:SPAlertActionStyleCancel handler:nil];
+        SPAlertAction *action = [SPAlertAction actionWithTitle:HHGetLocalLanguageTextValue(@"Cancel") style:SPAlertActionStyleCancel handler:nil];
         [alertController addAction:action];
     }
     

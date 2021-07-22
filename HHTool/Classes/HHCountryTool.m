@@ -52,7 +52,7 @@ static dispatch_once_t onceToken = 0;
     
     // 有数组
     if (self.dataArray.count > 0) {
-        HHLanguageType type = GetLanguageType();
+        HHLanguageType type = HHGetLanguageType();
         // 语言相同
         if (self.languageType == type) {
             if (compelete) {
@@ -65,7 +65,7 @@ static dispatch_once_t onceToken = 0;
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(queue, ^{
         
-        HHLanguageType type = GetLanguageType();
+        HHLanguageType type = HHGetLanguageType();
         self.languageType = type;
         NSData *data = nil;
         if (type == HHLanguageEnglish) {

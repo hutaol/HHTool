@@ -26,16 +26,16 @@ typedef NS_ENUM(NSUInteger, HHLanguageType) {
 #define HHLanguageTypeKey @"HHLanguageTypeKey"
 
 
-static inline NSString *GetLocalLanguageTextValue(NSString *key) {
+static inline NSString *HHGetLocalLanguageTextValue(NSString *key) {
     return [NSBundle hhLocalizedStringForKey:key];
 }
 
-static inline UIImage *GetImageWithName(NSString *name) {
+static inline UIImage *HHGetImageWithName(NSString *name) {
     return [NSBundle getImageForHHTool:name];
 }
 
-static inline HHLanguageType GetLanguageType() {
-    return (HHLanguageType)[NSBundle getLanguageType];
+static inline HHLanguageType HHGetLanguageType() {
+    return (HHLanguageType)[NSBundle HHGetLanguageType];
 }
 
 #endif /* HHDefine_h */

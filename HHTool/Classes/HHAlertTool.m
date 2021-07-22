@@ -19,18 +19,18 @@
 
 // 确定 警示框
 + (void)alertWithMessage:(NSString *)message {
-    [self alertWithTitle:GetLocalLanguageTextValue(@"Tips") message:message cancelTitle:nil buttonTitles:@[GetLocalLanguageTextValue(@"Done")] actionsBlock:nil];
+    [self alertWithTitle:HHGetLocalLanguageTextValue(@"Tips") message:message cancelTitle:nil buttonTitles:@[HHGetLocalLanguageTextValue(@"Done")] actionsBlock:nil];
 }
 
 /// 一个按钮
 + (void)alertWithTitle:(NSString *)title message:(NSString *)message button:(NSString *)button confirmBlock:(void (^)(NSInteger, NSString * _Nonnull))confirmBlock {
-    [self alertWithTitle:GetLocalLanguageTextValue(@"Tips") message:message cancelTitle:nil buttonTitles:@[GetLocalLanguageTextValue(@"Done")] actionsBlock:confirmBlock];
+    [self alertWithTitle:HHGetLocalLanguageTextValue(@"Tips") message:message cancelTitle:nil buttonTitles:@[HHGetLocalLanguageTextValue(@"Done")] actionsBlock:confirmBlock];
 }
 
 // 取消，确定 警示框
 + (void)alert2WithMessage:(NSString *)message confirmBlock:(void (^)(NSInteger, NSString * _Nonnull))confirmBlock {
 
-    [self alertWithTitle:GetLocalLanguageTextValue(@"Tips") message:message cancelTitle:GetLocalLanguageTextValue(@"Cancel") buttonTitles:@[GetLocalLanguageTextValue(@"Done")] actionsBlock:^(NSInteger buttonIndex, NSString * _Nonnull buttonTitle) {
+    [self alertWithTitle:HHGetLocalLanguageTextValue(@"Tips") message:message cancelTitle:HHGetLocalLanguageTextValue(@"Cancel") buttonTitles:@[HHGetLocalLanguageTextValue(@"Done")] actionsBlock:^(NSInteger buttonIndex, NSString * _Nonnull buttonTitle) {
         if (buttonIndex == 0) {
             if (confirmBlock) {
                 confirmBlock(0, buttonTitle);
@@ -41,7 +41,7 @@
 
 + (void)alert2WithMessage:(NSString *)message cancel:(NSString *)cancel confirm:(NSString *)confirm confirmBlock:(void (^)(NSInteger, NSString * _Nonnull))confirmBlock {
 
-    [self alertWithTitle:GetLocalLanguageTextValue(@"Tips") message:message cancelTitle:cancel buttonTitles:@[confirm] actionsBlock:^(NSInteger buttonIndex, NSString * _Nonnull buttonTitle) {
+    [self alertWithTitle:HHGetLocalLanguageTextValue(@"Tips") message:message cancelTitle:cancel buttonTitles:@[confirm] actionsBlock:^(NSInteger buttonIndex, NSString * _Nonnull buttonTitle) {
         if (buttonIndex == 0) {
             if (confirmBlock) {
                 confirmBlock(0, buttonTitle);
@@ -124,7 +124,7 @@
 }
 
 + (void)sheetWithMessage:(NSString *)message buttonTitles:(NSArray<NSString *> *)buttonTitles actionsBlock:(void (^)(NSInteger, NSString * _Nonnull))actionsBlock {
-    [self sheetWithTitle:nil message:message cancelTitle:GetLocalLanguageTextValue(@"Cancel") destructiveTitle:nil buttonTitles:buttonTitles actionsBlock:^(NSInteger buttonIndex, NSString * _Nonnull buttonTitle) {
+    [self sheetWithTitle:nil message:message cancelTitle:HHGetLocalLanguageTextValue(@"Cancel") destructiveTitle:nil buttonTitles:buttonTitles actionsBlock:^(NSInteger buttonIndex, NSString * _Nonnull buttonTitle) {
         if (buttonIndex >= 0) {
             if (actionsBlock) {
                 actionsBlock(buttonIndex, buttonTitle);

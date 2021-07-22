@@ -9,10 +9,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_ENUM(NSInteger, ToastToolPosition) {
-    ToastToolPositionBottom,
-    ToastToolPositionCenter,
-    ToastToolPositionTop,
+typedef NS_ENUM(NSInteger, HHToastToolPosition) {
+    HHToastToolPositionBottom,
+    HHToastToolPositionCenter,
+    HHToastToolPositionTop,
 };
 
 @interface HHToastTool : NSObject
@@ -43,13 +43,13 @@ typedef NS_ENUM(NSInteger, ToastToolPosition) {
 
 /// 显示提示视图
 /// @param message 提示内容
-/// @param position @ToastToolPosition
+/// @param position @HHToastToolPosition
 /// @param showTime 显示时间s
 /// @param view 父视图，view=nil显示在window上
-+ (void)show:(NSString *)message position:(ToastToolPosition)position showTime:(float)showTime view:(nullable UIView *)view;
++ (void)show:(NSString *)message position:(HHToastToolPosition)position showTime:(float)showTime view:(nullable UIView *)view;
 
 /// 显示提示视图，window
-+ (void)show:(NSString *)message position:(ToastToolPosition)position showTime:(float)showTime;
++ (void)show:(NSString *)message position:(HHToastToolPosition)position showTime:(float)showTime;
 
 /// 显示提示视图，point 中心点
 + (void)show:(NSString *)message point:(CGPoint)point showTime:(float)showTime view:(nullable UIView *)view;

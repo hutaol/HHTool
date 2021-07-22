@@ -94,7 +94,7 @@ static NSBundle *bundle = nil;
     return language;
 }
 
-+ (NSInteger)getLanguageType {
++ (NSInteger)HHGetLanguageType {
     HHLanguageType type = [[[NSUserDefaults standardUserDefaults] valueForKey:HHLanguageTypeKey] integerValue];
     if (type != HHLanguageSystem) {
         return type;
