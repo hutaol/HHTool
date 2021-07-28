@@ -10,7 +10,9 @@
 @implementation NSDate (HHTime)
 
 - (NSString *)toTimestamp {
-    return [NSString stringWithFormat:@"%ld", (long)[self timeIntervalSince1970]];
+    NSTimeInterval time = [self timeIntervalSince1970] * 1000; // *1000 是精确到毫秒，不乘就是精确到秒
+    NSString *timeString = [NSString stringWithFormat:@"%.0f", time];
+    return timeString;
 }
 
 - (NSString *)toStringWithFormat:(NSString *)format {
@@ -30,8 +32,8 @@
     if (!date) {
         date = [NSDate date];
     }
-    // *1000 是精确到毫秒，不乘就是精确到秒
-    NSString *timeString = [NSString stringWithFormat:@"%ld", (long)[date timeIntervalSince1970]];
+    NSTimeInterval time = [date timeIntervalSince1970] * 1000; // *1000 是精确到毫秒，不乘就是精确到秒
+    NSString *timeString = [NSString stringWithFormat:@"%.0f", time];
     return timeString;
 }
 
@@ -45,6 +47,10 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:format];
     return [formatter stringFromDate:date];
+}
+
++ (NSString *)string:(NSDate *)date {
+    return [self string:date format:nil];
 }
 
 + (NSDate *)date:(NSString *)timestamp {
@@ -61,7 +67,7 @@
 
 + (NSDate *)dateForString:(NSString *)string format:(NSString *)format {
     if (!format || format.length == 0) {
-        format = @"yyyy-MM-dd HH:mm:ss";
+        format = @"yyyy-MM-dd HH:mm";
     }
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:format];

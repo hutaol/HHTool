@@ -27,7 +27,8 @@
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"选择" style:UIBarButtonItemStylePlain target:self action:@selector(onClick)];
     
-    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 100, self.view.width, 200)];
+    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 100, self.view.width, 300)];
+    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     self.imageView.backgroundColor = [UIColor grayColor];
     self.imageView.userInteractionEnabled = YES;
     [self.view addSubview:self.imageView];
@@ -70,6 +71,7 @@
     if (!self.imageView.image) {
         return;
     }
+    
     [HHPhotoTool showImageWithController:self source:@[self.imagePath?:self.imageView.image] previews:@[self.imageView] index:0];
 }
 

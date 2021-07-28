@@ -167,6 +167,7 @@
             if ([[[model.localImagePath pathExtension] lowercaseString] isEqualToString:@"gif"]) {
                 photoModel.cameraPhotoType = HXPhotoModelMediaTypeCameraPhotoTypeLocalGif;
             }
+            photoModel.imageSize = model.imageSize;
             photoModel.imageURL = model.localImagePath;
             photoModel.selected = canAddPhoto ? model.selected : NO;
             if (model.selected && canAddPhoto) {
@@ -187,6 +188,7 @@
                 continue;
             }
             HXPhotoModel *photoModel = [HXPhotoModel photoModelWithImageURL:model.networkImageURL thumbURL:model.networkThumbURL];
+            photoModel.imageSize = model.imageSize;
             photoModel.selected = canAddPhoto ? model.selected : NO;
             if (model.selected && canAddPhoto) {
                 [self.endCameraPhotos addObject:photoModel];
@@ -207,6 +209,7 @@
             }
             // 本地视频
             HXPhotoModel *photoModel = [HXPhotoModel photoModelWithVideoURL:model.localVideoURL];
+            photoModel.imageSize = model.imageSize;
             if (photoModel.videoDuration >= self.configuration.videoMaximumSelectDuration + 1) {
                 canAddVideo = NO;
             }else if (photoModel.videoDuration < self.configuration.videoMinimumSelectDuration) {
@@ -232,6 +235,7 @@
             }
             // 网络视频
             HXPhotoModel *photoModel = [HXPhotoModel photoModelWithNetworkVideoURL:model.networkVideoURL videoCoverURL:model.networkImageURL videoDuration:model.videoDuration];
+            photoModel.imageSize = model.imageSize;
             if (photoModel.videoDuration >= self.configuration.videoMaximumSelectDuration + 1) {
                 canAddVideo = NO;
             }else if (photoModel.videoDuration < self.configuration.videoMinimumSelectDuration) {
@@ -263,6 +267,7 @@
             }else {
                 photoModel = [HXPhotoModel photoModelWithLivePhotoNetWorkImage:model.networkImageURL netWorkVideoURL:model.networkVideoURL];
             }
+            photoModel.imageSize = model.imageSize;
             photoModel.selected = canAddPhoto ? model.selected : NO;
             if (model.selected && canAddPhoto) {
                 [self.endCameraPhotos addObject:photoModel];
@@ -303,7 +308,7 @@
             if (model.subType != HXPhotoModelMediaSubTypePhoto) {
                 continue;
             }
-            if (model.asset != nil) {
+            if (model.asset != nil && model.photoEdit == nil) {
                 [model.asset hx_checkForModificationsWithAssetPathMethodCompletion:^(BOOL hasAdj) {
                     if (hasAdj) {
                         [model requestImageDataStartRequestICloud:nil progressHandler:nil success:^(NSData *imageData, UIImageOrientation orientation, HXPhotoModel *model, NSDictionary *info) {

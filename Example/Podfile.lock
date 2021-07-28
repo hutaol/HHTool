@@ -20,18 +20,18 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - HHTool (0.3.1):
+  - HHTool (0.3.3):
     - DZNEmptyDataSet (~> 1.8.1)
-    - HXPhotoPicker (~> 3.2.1)
-    - HXPhotoPicker/SDWebImage_AF (~> 3.2.1)
+    - HXPhotoPicker (~> 3.2.2)
+    - HXPhotoPicker/SDWebImage_AF (~> 3.2.2)
     - MBProgressHUD (~> 1.2.0)
     - SPAlertController (~> 4.0.0)
     - Toast (~> 4.0.0)
     - YBPopupMenu (~> 1.1.9)
-  - HXPhotoPicker (3.2.1):
-    - HXPhotoPicker/Default (= 3.2.1)
-  - HXPhotoPicker/Default (3.2.1)
-  - HXPhotoPicker/SDWebImage_AF (3.2.1):
+  - HXPhotoPicker (3.2.2):
+    - HXPhotoPicker/Default (= 3.2.2)
+  - HXPhotoPicker/Default (3.2.2)
+  - HXPhotoPicker/SDWebImage_AF (3.2.2):
     - AFNetworking
     - SDWebImage (~> 5.0)
   - MBProgressHUD (1.2.0)
@@ -66,8 +66,8 @@ SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  HHTool: fb78c77052984d6823665ad0463b2ed0183384da
-  HXPhotoPicker: ae88dd5b4e838e255b3fcd1143dc82a5fe1774f5
+  HHTool: 638f7aa7fb3619e77c97786d93edf2683fdb6d6b
+  HXPhotoPicker: fe0a84764c6fc93cdaccb5f8dabe0af08470075e
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SPAlertController: b245d7a5e17d612da051f2612aca3703f21d108f

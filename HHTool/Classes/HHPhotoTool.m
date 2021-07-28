@@ -347,6 +347,7 @@
     photoManager.configuration.photoCanEdit = NO;
     photoManager.configuration.videoCanEdit = NO;
     photoManager.configuration.videoAutoPlayType = HXVideoAutoPlayTypeAll;
+    photoManager.configuration.allowPreviewDirectLoadOriginalImage = YES;
 
     photoManager.configuration.languageType = [self getLanaguage];
     

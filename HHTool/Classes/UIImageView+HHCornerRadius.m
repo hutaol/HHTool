@@ -8,7 +8,7 @@
 #import "UIImageView+HHCornerRadius.h"
 #import <objc/runtime.h>
 
-const char kProcessedImage;
+const char hh_kProcessedImage;
 
 @interface UIImageView ()
 
@@ -104,7 +104,7 @@ const char kProcessedImage;
     UIImage *processedImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     if (processedImage) {
-        objc_setAssociatedObject(processedImage, &kProcessedImage, @(1), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(processedImage, &hh_kProcessedImage, @(1), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     self.image = processedImage;
 }
@@ -129,7 +129,7 @@ const char kProcessedImage;
     UIImage *processedImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     if (processedImage) {
-        objc_setAssociatedObject(processedImage, &kProcessedImage, @(1), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(processedImage, &hh_kProcessedImage, @(1), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     self.image = processedImage;
 }
@@ -193,7 +193,7 @@ const char kProcessedImage;
         UIImage *newImage = change[NSKeyValueChangeNewKey];
         if ([newImage isMemberOfClass:[NSNull class]]) {
             return;
-        } else if ([objc_getAssociatedObject(newImage, &kProcessedImage) intValue] == 1) {
+        } else if ([objc_getAssociatedObject(newImage, &hh_kProcessedImage) intValue] == 1) {
             return;
         }
         [self validateFrame];

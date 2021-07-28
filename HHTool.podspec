@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HHTool'
-  s.version          = '0.3.3'
+  s.version          = '0.3.4'
   s.summary          = '一些简单的工具类'
 
 # This description is used to generate tags and improve search results.
@@ -38,10 +38,9 @@ TODO: Add long description of the pod here.
   s.dependency 'Toast', '~> 4.0.0'
   s.dependency 'SPAlertController', '~> 4.0.0'
   s.dependency 'MBProgressHUD', '~> 1.2.0'
-  s.dependency 'HXPhotoPicker', '~> 3.2.1'
-  s.dependency 'HXPhotoPicker/SDWebImage_AF', '~> 3.2.1'
+  s.dependency 'HXPhotoPicker', '~> 3.2.2'
+  s.dependency 'HXPhotoPicker/SDWebImage_AF', '~> 3.2.2'
   s.dependency 'YBPopupMenu', '~> 1.1.9'
   s.dependency 'DZNEmptyDataSet', '~> 1.8.1'
-
   
 end

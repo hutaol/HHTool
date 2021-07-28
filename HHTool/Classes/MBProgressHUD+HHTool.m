@@ -9,7 +9,7 @@
 #import "UIWindow+HHHelper.h"
 #import "HHDefine.h"
 
-const NSInteger hideTime = 2;
+const NSInteger hh_hideTime = 2;
 
 @implementation MBProgressHUD (HHTool)
 
@@ -30,11 +30,11 @@ const NSInteger hideTime = 2;
 }
 
 + (void)showSuccess:(NSString *)success {
-    [self showSuccess:success duration:hideTime];
+    [self showSuccess:success duration:hh_hideTime];
 }
 
 + (void)showSuccess:(NSString *)success view:(UIView *)view {
-    [self showSuccess:success duration:hideTime view:view];
+    [self showSuccess:success duration:hh_hideTime view:view];
 }
 
 + (void)showSuccess:(NSString *)success duration:(NSUInteger)time {
@@ -46,11 +46,11 @@ const NSInteger hideTime = 2;
 }
 
 + (void)showError:(NSString *)error {
-    [self showError:error duration:hideTime];
+    [self showError:error duration:hh_hideTime];
 }
 
 + (void)showError:(NSString *)error view:(UIView *)view {
-    [self showError:error duration:hideTime view:view];
+    [self showError:error duration:hh_hideTime view:view];
 }
 
 + (void)showError:(NSString *)error duration:(NSUInteger)time {
