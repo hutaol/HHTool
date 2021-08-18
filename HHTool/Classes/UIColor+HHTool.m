@@ -125,5 +125,12 @@
     }
 }
 
++ (UIColor *)hh_whiteColor {
+    return [self hh_colorWithLightColor:[UIColor whiteColor] darkColor:[UIColor blackColor]];
+}
+
++ (UIColor *)hh_blockColor {
+    return [self hh_colorWithLightColor:[UIColor blackColor] darkColor:[UIColor whiteColor]];
+}
 
 @end

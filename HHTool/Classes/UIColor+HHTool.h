@@ -24,6 +24,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIColor *)hh_colorWithLightColor:(UIColor *)lightColor darkColor:(UIColor *)darkColor;
 
+/// 常用颜色
++ (UIColor *)hh_whiteColor;
++ (UIColor *)hh_blockColor;
+
 @end
 
 NS_ASSUME_NONNULL_END
