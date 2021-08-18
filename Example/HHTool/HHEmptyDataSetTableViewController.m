@@ -11,6 +11,8 @@
 
 @interface HHEmptyDataSetTableViewController ()
 
+@property (nonatomic, strong) NSMutableArray *data;
+
 @end
 
 @implementation HHEmptyDataSetTableViewController
@@ -23,6 +25,9 @@
     self.tableView.buttonText = @"点击刷新";
 //    self.tableView.loadedImageName = @"ic_pop_chat_blue";
     
+    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    
     __weak typeof(self) ws = self;
     self.tableView.loadingClick = ^{
         [ws setupData];
@@ -34,9 +39,10 @@
 
 - (void)setupData {
     self.tableView.loading = YES;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.data = @[@"1", @"2", @"3"].mutableCopy;
         [self.tableView reloadData];
-        self.tableView.loading = NO;
+//        self.tableView.loading = NO;
     });
 }
 
@@ -44,24 +50,21 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.data.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
     
-    // Configure the cell...
-    
+    cell.textLabel.text = self.data[indexPath.row];
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

@@ -38,19 +38,19 @@
     SPAlertController *alertController = [SPAlertController alertControllerWithTitle:title message:message preferredStyle:SPAlertControllerStyleAlert];
     alertController.tapBackgroundViewDismiss = NO;
     
-    for (int i = 0; i < buttonTitles.count; i++) {
-        SPAlertAction *action = [SPAlertAction actionWithTitle:[buttonTitles objectAtIndex:i] style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
+    if (cancelTitle) {
+        SPAlertAction *action = [SPAlertAction actionWithTitle:cancelTitle style:SPAlertActionStyleCancel handler:^(SPAlertAction * _Nonnull action) {
             if (actionsBlock) {
-                actionsBlock(i, action.title);
+                actionsBlock(-1, action.title);
             }
         }];
         [alertController addAction:action];
     }
     
-    if (cancelTitle) {
-        SPAlertAction *action = [SPAlertAction actionWithTitle:cancelTitle style:SPAlertActionStyleCancel handler:^(SPAlertAction * _Nonnull action) {
+    for (int i = 0; i < buttonTitles.count; i++) {
+        SPAlertAction *action = [SPAlertAction actionWithTitle:[buttonTitles objectAtIndex:i] style:SPAlertActionStyleDefault handler:^(SPAlertAction * _Nonnull action) {
             if (actionsBlock) {
-                actionsBlock(-1, action.title);
+                actionsBlock(i, action.title);
             }
         }];
         [alertController addAction:action];
