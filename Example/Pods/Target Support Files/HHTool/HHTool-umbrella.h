@@ -39,6 +39,7 @@
 #import "UIImage+HHCompress.h"
 #import "UIImageView+HHCornerRadius.h"
 #import "UIScrollView+HHLoading.h"
+#import "UIScrollView+HHUtil.h"
 #import "UIView+HHFrame.h"
 #import "UIView+HHLayout.h"
 #import "UIWindow+HHHelper.h"
