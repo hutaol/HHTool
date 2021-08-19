@@ -25,7 +25,7 @@
 }
 
 + (BOOL)hh_isNotEmpty:(NSString *)str {
-    return ![self isEmpty:str];
+    return ![self hh_isEmpty:str];
 }
 
 - (NSString *)hh_trim {
