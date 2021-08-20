@@ -34,6 +34,9 @@
 }
 
 - (void)setupButtonLayout {
+    if (self.hh_titleWithImageAlignment) {
+        return;
+    }
     CGFloat image_w = self.imageView.bounds.size.width;
     CGFloat image_h = self.imageView.bounds.size.height;
     
