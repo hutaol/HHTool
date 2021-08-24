@@ -54,9 +54,6 @@ static HHAudioRecorder *_audioRecorder;
     [recordSettings setObject:[NSNumber numberWithInt:2] forKey:AVNumberOfChannelsKey];
     // 录音质量
     [recordSettings setObject:[NSNumber numberWithInt: AVAudioQualityMin] forKey:AVEncoderAudioQualityKey];
-
-    self.timer = [NSTimer timerWithTimeInterval:0.5 target:self selector:@selector(voiceLevel:) userInfo:nil repeats:YES];
-    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
     
     BOOL createSuccess = [self createDirectory:self.filePath];
     if (!createSuccess) {
@@ -72,6 +69,10 @@ static HHAudioRecorder *_audioRecorder;
     
     if (self.recorder.prepareToRecord) {
         self.recorder.meteringEnabled = YES;
+        
+        self.timer = [NSTimer timerWithTimeInterval:0.5 target:self selector:@selector(voiceLevel:) userInfo:nil repeats:YES];
+        [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+        
         return [self.recorder record];
     } else {
         return NO;

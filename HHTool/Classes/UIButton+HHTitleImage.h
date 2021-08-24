@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, HHTitleWithImageAlignment) {
-    HHTitleWithImageAlignmentUp = 0,  // title is up
+    HHTitleWithImageAlignmentUp = 1,  // title is up
     HHTitleWithImageAlignmentLeft,    // title is left
     HHTitleWithImageAlignmentDown,    // title is down
     HHTitleWithImageAlignmentRight    // title is right
