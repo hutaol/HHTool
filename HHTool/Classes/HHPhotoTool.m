@@ -312,7 +312,7 @@
 
 
 /// 预览图片
-+ (void)showImageWithController:(UIViewController *)vc source:(NSArray *)source previews:(NSArray *)previews index:(NSInteger)index {
++ (void)showImageWithController:(UIViewController *)vc source:(NSArray *)source previews:(NSArray<UIView *> *)previews index:(NSInteger)index {
     
     NSMutableArray *arrImages = [NSMutableArray array];
 
@@ -321,11 +321,19 @@
         if ([obj isKindOfClass:[NSURL class]]) {
             // 网络图片
             HXCustomAssetModel *model = [HXCustomAssetModel assetWithNetworkImageURL:obj selected:YES];
+            // TODO: HXPhotoPicker展示的不是UIImage时不设置尺寸会闪烁
+            if (previews[i]) {
+                model.imageSize = ((UIView *)previews[i]).hx_size;
+            }
             [arrImages  addObject:model];
             
         } else if ([obj isKindOfClass:[NSString class]]) {
             // 路径
             HXCustomAssetModel *model = [HXCustomAssetModel assetWithImagePath:[NSURL fileURLWithPath:obj] selected:YES];
+            // TODO: HXPhotoPicker展示的不是UIImage时不设置尺寸会闪烁
+            if (previews[i]) {
+                model.imageSize = ((UIView *)previews[i]).hx_size;
+            }
             [arrImages addObject:model];
             
         } else if ([obj isKindOfClass:[UIImage class]]) {
@@ -414,6 +422,10 @@
 + (void)showVideoWithController:(UIViewController *)vc videoURL:(NSURL *)videoURL coverURL:(NSURL *)converURL videoDuration:(NSTimeInterval)videoDuration preview:(UIView *)preview {
     
     HXCustomAssetModel *model = [HXCustomAssetModel assetWithNetworkVideoURL:videoURL videoCoverURL:converURL videoDuration:videoDuration selected:YES];
+    // TODO: HXPhotoPicker展示的不是UIImage时不设置尺寸会闪烁
+    if (preview) {
+        model.imageSize = preview.hx_size;
+    }
     
     HXPhotoManager *photoManager = [HXPhotoManager managerWithType:HXPhotoManagerSelectedTypePhotoAndVideo];
     photoManager.configuration.saveSystemAblum = YES;

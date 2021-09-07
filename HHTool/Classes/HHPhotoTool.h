@@ -53,7 +53,7 @@ typedef void (^HHPhotoToolMultipleCompletion)(NSArray <HHPhotoModel *> *images);
 /// @param source 3种类型 NSURL UIImage NSString(路径)
 /// @param previews 小图imageView
 /// @param index 第几张
-+ (void)showImageWithController:(UIViewController *)vc source:(NSArray *)source previews:(nullable NSArray *)previews index:(NSInteger)index;
++ (void)showImageWithController:(UIViewController *)vc source:(NSArray *)source previews:(nullable NSArray<UIView *> *)previews index:(NSInteger)index;
 
 /// 预览视频
 /// @param vc sender
