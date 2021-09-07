@@ -1,6 +1,6 @@
 {
   "name": "HHTool",
-  "version": "0.3.6",
+  "version": "0.3.10",
   "summary": "一些简单的工具类",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/hutaol/HHTool",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/hutaol/HHTool.git",
-    "tag": "0.3.6"
+    "tag": "0.3.10"
   },
   "platforms": {
     "ios": "9.0"
@@ -32,10 +32,10 @@
       "~> 1.2.0"
     ],
     "HXPhotoPicker": [
-      "~> 3.2.2"
+      "~> 3.2.3"
     ],
     "HXPhotoPicker/SDWebImage_AF": [
-      "~> 3.2.2"
+      "~> 3.2.3"
     ],
     "YBPopupMenu": [
       "~> 1.1.9"
