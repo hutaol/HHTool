@@ -1,6 +1,6 @@
 {
   "name": "HHTool",
-  "version": "0.4.1",
+  "version": "0.4.3",
   "summary": "一些简单的工具类",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/hutaol/HHTool",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/hutaol/HHTool.git",
-    "tag": "0.4.1"
+    "tag": "0.4.3"
   },
   "platforms": {
     "ios": "9.0"
