@@ -45,6 +45,7 @@ const NSInteger hh_hideTime = 2;
     [self showCustomIcon:HHGetImageWithName(@"hud_success") message:success duration:time view:view];
 }
 
+
 + (void)showError:(NSString *)error {
     [self showError:error duration:hh_hideTime];
 }
@@ -61,7 +62,28 @@ const NSInteger hh_hideTime = 2;
     [self showCustomIcon:HHGetImageWithName(@"hud_error") message:error duration:time view:view];
 }
 
+
++ (void)showInfo:(NSString *)info {
+    [self showInfo:info view:nil];
+}
+
++ (void)showInfo:(NSString *)info view:(UIView *)view {
+    [self showInfo:info duration:hh_hideTime view:view];
+}
+
++ (void)showInfo:(NSString *)info duration:(NSUInteger)time {
+    [self showInfo:info duration:time view:nil];
+}
+
++ (void)showInfo:(NSString *)info duration:(NSUInteger)time view:(UIView *)view {
+    [self showCustomIcon:HHGetImageWithName(@"hud_info") message:info duration:time view:view];
+}
+
+
 + (void)showCustomIcon:(UIImage *)icon message:(NSString *)message duration:(NSUInteger)time view:(UIView *)view {
+    if (!icon) {
+        return;
+    }
     if (!view) {
         view = [UIWindow hh_keyWindow];
     }

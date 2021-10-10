@@ -22,6 +22,8 @@
 #import "HHPopupTool.h"
 #import "HHToastTool.h"
 #import "HHUIImagePicker.h"
+#import "HHSelectionTool.h"
+#import "HHUtilities.h"
 
 #import "MBProgressHUD+HHTool.h"
 #import "NSDate+HHTime.h"
@@ -39,5 +41,6 @@
 #import "UIView+HHFrame.h"
 #import "UIView+HHLayout.h"
 #import "UIWindow+HHHelper.h"
+#import "UIControl+HHTool.h"
 
 #endif /* HHTool_h */
