@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HHTool'
-  s.version          = '0.4.1'
+  s.version          = '0.4.2'
   s.summary          = '一些简单的工具类'
 
 # This description is used to generate tags and improve search results.

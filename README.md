@@ -21,7 +21,7 @@ pod 'HHTool'
 
 ## Author
 
-1325049637@qq.com
+邮箱：1325049637@qq.com
 
 ## License
 
