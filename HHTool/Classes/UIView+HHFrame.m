@@ -185,11 +185,11 @@
     return frame;
 }
 
-- (CGFloat)windowViewX {
+- (CGFloat)windowX {
     return self.windowFrame.origin.x;
 }
 
-- (CGFloat)windowViewY {
+- (CGFloat)windowY {
     return self.windowFrame.origin.y;
 }
 
