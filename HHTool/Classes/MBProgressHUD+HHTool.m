@@ -111,9 +111,14 @@ const NSInteger hh_hideTime = 2;
     [self hide:nil];
 }
 
++ (void)hideTop {
+    UIView *view = [UIWindow topViewController].view;
+    [self hide:view];
+}
+
 + (void)hide:(UIView *)view {
     if (!view) {
-        view = [UIWindow topViewController].view;
+        view = [UIWindow hh_keyWindow];
     }
     [self hideHUDForView:view animated:YES];
 }

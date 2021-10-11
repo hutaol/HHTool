@@ -86,53 +86,6 @@
     self.frame = frame;
 }
 
-- (CGFloat)ttScreenX {
-    CGFloat x = 0.0f;
-    for (UIView* view = self; view; view = view.superview) {
-        x += view.left;
-    }
-    return x;
-}
-
-- (CGFloat)ttScreenY {
-    CGFloat y = 0.0f;
-    for (UIView* view = self; view; view = view.superview) {
-        y += view.top;
-    }
-    return y;
-}
-
-- (CGFloat)screenViewX {
-    CGFloat x = 0.0f;
-    for (UIView* view = self; view; view = view.superview) {
-        x += view.left;
-        
-        if ([view isKindOfClass:[UIScrollView class]]) {
-            UIScrollView* scrollView = (UIScrollView*)view;
-            x -= scrollView.contentOffset.x;
-        }
-    }
-    
-    return x;
-}
-
-- (CGFloat)screenViewY {
-    CGFloat y = 0;
-    for (UIView* view = self; view; view = view.superview) {
-        y += view.top;
-        
-        if ([view isKindOfClass:[UIScrollView class]]) {
-            UIScrollView* scrollView = (UIScrollView*)view;
-            y -= scrollView.contentOffset.y;
-        }
-    }
-    return y;
-}
-
-- (CGRect)screenFrame {
-    return CGRectMake(self.screenViewX, self.screenViewY, self.width, self.height);
-}
-
 - (CGPoint)origin {
     return self.frame.origin;
 }
@@ -167,6 +120,77 @@
     } else {
         return 0;
     }
+}
+
+- (CGFloat)safeTop {
+    if (@available(iOS 11.0, *)) {
+        return self.safeAreaInsets.top;
+    } else {
+        return 0;
+    }
+}
+
+
+- (CGFloat)screenX {
+    CGFloat x = 0.0f;
+    for (UIView *view = self; view; view = view.superview) {
+        x += view.left;
+    }
+    return x;
+}
+
+- (CGFloat)screenY {
+    CGFloat y = 0.0f;
+    for (UIView *view = self; view; view = view.superview) {
+        y += view.top;
+    }
+    return y;
+}
+
+- (CGRect)screenFrame {
+    return CGRectMake(self.screenX, self.screenY, self.width, self.height);
+}
+
+- (CGFloat)screenContentX {
+    CGFloat x = 0.0f;
+    for (UIView *view = self; view; view = view.superview) {
+        x += view.left;
+        if ([view isKindOfClass:[UIScrollView class]]) {
+            UIScrollView *scrollView = (UIScrollView *)view;
+            x -= scrollView.contentOffset.x;
+        }
+    }
+    return x;
+}
+
+- (CGFloat)screenContentY {
+    CGFloat y = 0;
+    for (UIView *view = self; view; view = view.superview) {
+        y += view.top;
+        if ([view isKindOfClass:[UIScrollView class]]) {
+            UIScrollView *scrollView = (UIScrollView *)view;
+            y -= scrollView.contentOffset.y;
+        }
+    }
+    return y;
+}
+
+- (CGRect)screenContentFrame {
+    return CGRectMake(self.screenContentX, self.screenContentY, self.width, self.height);
+}
+
+- (CGRect)windowFrame {
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    CGRect frame = [self convertRect:self.bounds toView:window];
+    return frame;
+}
+
+- (CGFloat)windowViewX {
+    return self.windowFrame.origin.x;
+}
+
+- (CGFloat)windowViewY {
+    return self.windowFrame.origin.y;
 }
 
 @end

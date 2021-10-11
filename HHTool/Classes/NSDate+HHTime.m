@@ -39,7 +39,7 @@
 
 + (NSString *)string:(NSDate *)date format:(NSString *)format {
     if (!date) {
-        date = [NSDate date];
+        return @"";
     }
     if (format || format.length == 0) {
         format = @"yyyy-MM-dd HH:mm";

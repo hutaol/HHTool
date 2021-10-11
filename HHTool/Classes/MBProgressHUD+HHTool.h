@@ -41,8 +41,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 自定义提示
 + (void)showCustomIcon:(UIImage *)icon message:(NSString *)message duration:(NSUInteger)time view:(nullable UIView *)view;
 
-/// 隐藏
+/// 隐藏 window上
 + (void)hide;
++ (void)hideTop;
 + (void)hide:(nullable UIView *)view;
 
 @end

@@ -53,7 +53,7 @@
     if (@available(iOS 11.0, *)) {
         return [UIWindow hh_keyWindow].safeAreaInsets;
     } else {
-        return UIEdgeInsetsMake(20, 0, 0, 0);
+        return UIEdgeInsetsMake([self hh_statusBarHeight], 0, 0, 0);
     }
 }
 
