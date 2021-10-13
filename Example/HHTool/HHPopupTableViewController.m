@@ -62,7 +62,7 @@
             break;
         case 1:
         {
-            NSArray *arr = @[@"1", @"2", @"3", @"4"];
+            NSArray *arr = @[@"1", @"2", @"3", @"4", @"1", @"2", @"3", @"4"];
             
             [HHPopupTool showPopupBottomListTitle:title dataArray:arr action:^(NSInteger index, NSString * _Nonnull text) {
                 [HHToastTool show:text];
@@ -73,7 +73,7 @@
             break;
         case 2:
         {
-            NSArray *arr = @[@"1", @"2", @"3"];
+            NSArray *arr = @[@"1", @"2", @"3", @"1", @"2", @"3", @"4"];
             
             [HHPopupTool showPopupCenterListTitle:title dataArray:arr action:^(NSInteger index, NSString * _Nonnull text) {
                 [HHToastTool show:text];

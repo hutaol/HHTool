@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// 避免UIButton在同一时间多次点击
+/// 避免控件在同一时间多次点击
 @interface UIControl (HHTool)
 
 /// 添加点击事件的间隔时间

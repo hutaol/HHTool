@@ -16,6 +16,7 @@
 		357FD1B8264385DC00D6484F /* HHPopupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 357FD1B7264385DC00D6484F /* HHPopupTableViewController.m */; };
 		359369F127127E5E00D7179C /* HHProgressHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359369F027127E5E00D7179C /* HHProgressHUDViewController.m */; };
 		359C0ED225A0D5980088844B /* HHCountryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 359C0ED125A0D5980088844B /* HHCountryTableViewController.m */; };
+		35DAA2AF271577170042B874 /* HHCornerRadiusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DAA2AE271577170042B874 /* HHCornerRadiusViewController.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -65,6 +66,8 @@
 		359369F027127E5E00D7179C /* HHProgressHUDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHProgressHUDViewController.m; sourceTree = "<group>"; };
 		359C0ED025A0D5980088844B /* HHCountryTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHCountryTableViewController.h; sourceTree = "<group>"; };
 		359C0ED125A0D5980088844B /* HHCountryTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHCountryTableViewController.m; sourceTree = "<group>"; };
+		35DAA2AD271577170042B874 /* HHCornerRadiusViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHCornerRadiusViewController.h; sourceTree = "<group>"; };
+		35DAA2AE271577170042B874 /* HHCornerRadiusViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHCornerRadiusViewController.m; sourceTree = "<group>"; };
 		495F86B476A4396FA3616E84 /* Pods_HHTool_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HHTool_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* HHTool_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHTool_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -177,6 +180,8 @@
 				352AECB9268454F700C1CE80 /* HHButtonViewController.m */,
 				359369EF27127E5E00D7179C /* HHProgressHUDViewController.h */,
 				359369F027127E5E00D7179C /* HHProgressHUDViewController.m */,
+				35DAA2AD271577170042B874 /* HHCornerRadiusViewController.h */,
+				35DAA2AE271577170042B874 /* HHCornerRadiusViewController.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -448,6 +453,7 @@
 				6003F59E195388D20070C39A /* HHAppDelegate.m in Sources */,
 				357FD1B526437A7900D6484F /* HHAlertTableViewController.m in Sources */,
 				359369F127127E5E00D7179C /* HHProgressHUDViewController.m in Sources */,
+				35DAA2AF271577170042B874 /* HHCornerRadiusViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				35283ADE268317F30021D68F /* HHAudioRecorderViewController.m in Sources */,
 			);

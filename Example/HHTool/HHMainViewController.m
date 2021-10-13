@@ -15,10 +15,11 @@
 #import "HHAudioRecorderViewController.h"
 #import "HHButtonViewController.h"
 #import "HHProgressHUDViewController.h"
+#import "HHCornerRadiusViewController.h"
 
 @interface HHMainViewController ()
 
-@property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) NSArray *dataArray;
 
 @end
 
@@ -30,14 +31,16 @@
     self.title = @"例子";
     
     self.dataArray = @[
-        @"国家列表",
-        @"EmptyDataSet",
-        @"Photo",
-        @"Alert",
-        @"Popup",
-        @"录制音频",
-        @"按钮",
-        @"加载提示框"].mutableCopy;
+        @{@"title":@"国家列表", @"vc":@"HHCountryTableViewController"},
+        @{@"title":@"EmptyDataSet", @"vc":@"HHEmptyDataSetTableViewController"},
+        @{@"title":@"Photo", @"vc":@"HHPhotoViewController"},
+        @{@"title":@"Alert", @"vc":@"HHAlertTableViewController"},
+        @{@"title":@"Popup", @"vc":@"HHPopupTableViewController"},
+        @{@"title":@"录制音频", @"vc":@"HHAudioRecorderViewController"},
+        @{@"title":@"按钮", @"vc":@"HHButtonViewController"},
+        @{@"title":@"加载提示框", @"vc":@"HHProgressHUDViewController"},
+        @{@"title":@"图片圆角", @"vc":@"HHCornerRadiusViewController"},
+    ];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
     
@@ -57,66 +60,19 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
     
-    cell.textLabel.text = self.dataArray[indexPath.row];
+    cell.textLabel.text = self.dataArray[indexPath.row][@"title"];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    switch (indexPath.row) {
-        case 0:
-        {
-            HHCountryTableViewController *vc = [[HHCountryTableViewController alloc] init];
-            [self.navigationController pushViewController:vc animated:YES];
-        }
-            break;
-        case 1:
-        {
-            HHEmptyDataSetTableViewController *vc = [[HHEmptyDataSetTableViewController alloc] init];
-            [self.navigationController pushViewController:vc animated:YES];
-        }
-            break;
-        case 2:
-        {
-            HHPhotoViewController *vc = [[HHPhotoViewController alloc] init];
-            [self.navigationController pushViewController:vc animated:YES];
-        }
-            break;
-        case 3:
-        {
-            HHAlertTableViewController *vc = [[HHAlertTableViewController alloc] init];
-            [self.navigationController pushViewController:vc animated:YES];
-        }
-            break;
-        case 4:
-        {
-            HHPopupTableViewController *vc = [[HHPopupTableViewController alloc] init];
-            [self.navigationController pushViewController:vc animated:YES];
-        }
-            break;
-        case 5:
-        {
-            HHAudioRecorderViewController *vc = [[HHAudioRecorderViewController alloc] init];
-            [self.navigationController pushViewController:vc animated:YES];
-        }
-            break;
-        case 6:
-        {
-            HHButtonViewController *vc = [[HHButtonViewController alloc] init];
-            [self.navigationController pushViewController:vc animated:YES];
-        }
-            break;
-        case 7:
-        {
-            HHProgressHUDViewController *vc = [[HHProgressHUDViewController alloc] init];
-            [self.navigationController pushViewController:vc animated:YES];
-        }
-            break;
-            
-        default:
-            break;
-    }
     
+    NSString *str = self.dataArray[indexPath.row][@"vc"];
+    NSString *title = self.dataArray[indexPath.row][@"title"];
+    UIViewController *vc = [[NSClassFromString(str) alloc] init];
+    vc.title = title;
+    [self.navigationController pushViewController:vc animated:YES];
+
 }
 
 @end

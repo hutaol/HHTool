@@ -16,6 +16,7 @@ typedef NS_ENUM(NSInteger, HHTitleWithImageAlignment) {
     HHTitleWithImageAlignmentRight    // title is right
 };
 
+/// TODO: 不适合图片大小大于Frame，会出现布局错乱
 @interface UIButton (HHTitleImage)
 
 @property (nonatomic) IBInspectable CGFloat hh_imgTitleDistance;  // distance between image and title, default is 5

@@ -1,8 +1,8 @@
 //
-//  HHButtonViewController.h
+//  HHCornerRadiusViewController.h
 //  HHTool_Example
 //
-//  Created by Henry on 2021/6/24.
+//  Created by Henry on 2021/10/12.
 //  Copyright © 2021 1325049637@qq.com. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HHButtonViewController : UICollectionViewController
+@interface HHCornerRadiusViewController : UICollectionViewController
 
 @end
 
