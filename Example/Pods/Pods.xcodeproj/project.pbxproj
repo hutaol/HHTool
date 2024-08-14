@@ -831,7 +831,7 @@
 		4E88D17914D38775D2C7AB8A185EEA53 /* AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFNetworking-dummy.m"; sourceTree = "<group>"; };
 		4EECEA96CA399894E1C87BCFF064D227 /* HXPhotoEditGraffitiColorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HXPhotoEditGraffitiColorView.h; path = HXPhotoPicker/HXPhotoEdit/View/HXPhotoEditGraffitiColorView.h; sourceTree = "<group>"; };
 		4F0A3FE34CBA621540B3AB8E2A47DD19 /* HXAlbumlistView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HXAlbumlistView.h; path = HXPhotoPicker/View/HXAlbumlistView.h; sourceTree = "<group>"; };
-		4F2BCDF1FC66E7C53E1E6E7E03F94572 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		4F2BCDF1FC66E7C53E1E6E7E03F94572 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		4F5C0B1343175FBAA2BCDC9E2A6C0500 /* NSBundle+HHTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSBundle+HHTool.h"; path = "HHTool/Classes/NSBundle+HHTool.h"; sourceTree = "<group>"; };
 		4F7ED0AA1F04C4C6E3A28DF1122D3F16 /* YBPopupMenu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YBPopupMenu.debug.xcconfig; sourceTree = "<group>"; };
 		509D60D754B734D1712D6451A917962C /* SwiftSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSupport.swift; path = FBSnapshotTestCase/SwiftSupport.swift; sourceTree = "<group>"; };
@@ -1011,7 +1011,7 @@
 		9CAF223E4B2BF004D485371C3BB04AC3 /* HXVideoEditViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HXVideoEditViewController.m; path = HXPhotoPicker/Controller/HXVideoEditViewController.m; sourceTree = "<group>"; };
 		9D0D80ED2FF5424A5DD40DD728AF9A9D /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
 		9D1AEC98B871C68E65A3E17AA6F611D8 /* NSDate+HXExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+HXExtension.m"; path = "HXPhotoPicker/Category/NSDate+HXExtension.m"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DA050E34877DC82D49C0395C6ADB69C /* HXPhotoEditGraffitiColorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HXPhotoEditGraffitiColorView.m; path = HXPhotoPicker/HXPhotoEdit/View/HXPhotoEditGraffitiColorView.m; sourceTree = "<group>"; };
 		9E627F275C07890EEC077C3D340D1260 /* HXPhotoEditingView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HXPhotoEditingView.m; path = HXPhotoPicker/HXPhotoEdit/View/HXPhotoEditingView.m; sourceTree = "<group>"; };
 		9FF42575C6AD3E04728BE26E7AED38E8 /* HXCustomCollectionReusableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HXCustomCollectionReusableView.m; path = HXPhotoPicker/View/HXCustomCollectionReusableView.m; sourceTree = "<group>"; };
@@ -1021,7 +1021,7 @@
 		A15C41D05F74FA4D77E8EA47D3A11535 /* Pods-HHTool_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HHTool_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A1B655DEBA460738C9227E307C5D19C9 /* SDWebImageDownloaderOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloaderOperation.m; path = SDWebImage/Core/SDWebImageDownloaderOperation.m; sourceTree = "<group>"; };
 		A2A6B864BAB1B00B1D6F5645A2FA5502 /* HXPhotoEditSplashMaskLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HXPhotoEditSplashMaskLayer.h; path = HXPhotoPicker/HXPhotoEdit/View/HXPhotoEditSplashMaskLayer.h; sourceTree = "<group>"; };
-		A2CC381F273E43873076238B956C93A6 /* HHTool.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = HHTool.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A2CC381F273E43873076238B956C93A6 /* HHTool.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = HHTool.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A2D0651334693E7E9F21E65B5A4A26CE /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/PhotosUI.framework; sourceTree = DEVELOPER_DIR; };
 		A3765F7873F19F76A6749FE708CBAAED /* SDWebImageCacheSerializer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageCacheSerializer.h; path = SDWebImage/Core/SDWebImageCacheSerializer.h; sourceTree = "<group>"; };
 		A37695DF4FB10C2C5F2A257525E38500 /* SDAsyncBlockOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDAsyncBlockOperation.h; path = SDWebImage/Private/SDAsyncBlockOperation.h; sourceTree = "<group>"; };
@@ -1056,7 +1056,7 @@
 		B29FA96F84D5D1625FF823ED62A7F59E /* HXAlbumListViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HXAlbumListViewController.m; path = HXPhotoPicker/Controller/HXAlbumListViewController.m; sourceTree = "<group>"; };
 		B2BFE50EC233C03FFA0DBBF04BCBF45E /* HHConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HHConfiguration.m; path = HHTool/Classes/HHConfiguration.m; sourceTree = "<group>"; };
 		B33BE61C61550747D5C21CE73E998FC0 /* UIImage+Diff.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Diff.m"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.m"; sourceTree = "<group>"; };
-		B3A681DF31965E857FD2CD9CEA988A51 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		B3A681DF31965E857FD2CD9CEA988A51 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B4573BAAD5C16C06C2498D9D620F111F /* MBProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD-dummy.m"; sourceTree = "<group>"; };
 		B583AAFC08B1FBE37EE7E61C733CC181 /* SDImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCache.h; path = SDWebImage/Core/SDImageCache.h; sourceTree = "<group>"; };
 		B5E3DC20FE0B211194B7FD0351435AB1 /* SDImageCacheConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCacheConfig.h; path = SDWebImage/Core/SDImageCacheConfig.h; sourceTree = "<group>"; };
@@ -1603,7 +1603,6 @@
 				A6D4C52AE7590E5851E64A747DE72B0C /* Support Files */,
 				4BBF8405C2A9226E12E4C0746138799D /* UIKit */,
 			);
-			name = AFNetworking;
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
@@ -1613,7 +1612,6 @@
 				42DCE8277F1213FECE633133E9B3DE91 /* Core */,
 				12BEA19E7203F16089D80C583EB8620F /* Support Files */,
 			);
-			name = SDWebImage;
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
@@ -1624,7 +1622,6 @@
 				A483C2C51FE1719DC39D6889FCBE73BF /* Support Files */,
 				BB7D91BF6F6EC44A8C95AE9E18B3BF5D /* SwiftSupport */,
 			);
-			name = FBSnapshotTestCase;
 			path = FBSnapshotTestCase;
 			sourceTree = "<group>";
 		};
@@ -1818,7 +1815,6 @@
 				47713974EABC5B55E79E702815B5F9B2 /* SDWebImage_AF */,
 				EE4997A4CAAD23C3BA7F86262828BAC8 /* Support Files */,
 			);
-			name = HXPhotoPicker;
 			path = HXPhotoPicker;
 			sourceTree = "<group>";
 		};
@@ -1878,7 +1874,6 @@
 				02C4A5211F71939048A85826B485D7B0 /* YBRectConst.m */,
 				BD0248D2B0A0A1E9CC172AFE2C48E76D /* Support Files */,
 			);
-			name = YBPopupMenu;
 			path = YBPopupMenu;
 			sourceTree = "<group>";
 		};
@@ -1962,7 +1957,6 @@
 				ED2EBB1A9D60E7E4CF9D7A94A93934AD /* MBProgressHUD.m */,
 				07E3C9DBFFAB7C4831C85D1E9EE1DA73 /* Support Files */,
 			);
-			name = MBProgressHUD;
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -1973,7 +1967,6 @@
 				7C9CB9E1B12705EF6CF0E1160D7C11B8 /* UIScrollView+EmptyDataSet.m */,
 				9EC3D5C507A82031B9E543974C195853 /* Support Files */,
 			);
-			name = DZNEmptyDataSet;
 			path = DZNEmptyDataSet;
 			sourceTree = "<group>";
 		};
@@ -2077,7 +2070,6 @@
 				74C9BE6F4D354D78EBEA7631A0F2AAB3 /* UIView+Toast.m */,
 				8EEBAB33F93F670F0BD553E956086A6A /* Support Files */,
 			);
-			name = Toast;
 			path = Toast;
 			sourceTree = "<group>";
 		};
@@ -2109,7 +2101,6 @@
 				13F2EAE379BB011AFB32D128FB9CDE98 /* SPAlertController.m */,
 				71E80A14E62FD93928414563C57E8754 /* Support Files */,
 			);
-			name = SPAlertController;
 			path = SPAlertController;
 			sourceTree = "<group>";
 		};
@@ -4207,8 +4198,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
